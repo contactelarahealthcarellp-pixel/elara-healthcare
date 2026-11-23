@@ -1,1 +1,468 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About Us | Elara Healthcare LLP</title><meta name="description" content="Elara Healthcare LLP offers compassionate home healthcare services in Bengaluru."><link rel="stylesheet" href="style.css"></head><body><header><nav class="nav"><a class="brand" href="index.html">ELARA HEALTHCARE<small>LLP · BENGALURU</small></a><div class="links"><a class="" href="index.html">Home</a><a class="" href="services.html">Services</a><a class="active " href="about.html">About Us</a><a class="" href="leadership.html">Leadership</a><a class="action" href="request-care.html">Request Care</a><a class="" href="careers.html">Careers</a><a class="" href="contact.html">Contact</a></div></nav></header><main><section class="page-head"><div class="wrap"><div class="eyebrow">OUR STORY</div><h1>Care guided by compassion</h1><p>A people-first approach to home healthcare in Bengaluru.</p></div></section><section class="section"><div class="wrap split"><div><h2>Who we are</h2></div><div><p>Elara Healthcare LLP is committed to providing personalized home healthcare services with dignity, compassion and professional support.</p><p>Our goal is to make care easier to access and more comfortable for individuals and families.</p></div></div></section><section class="section soft"><div class="wrap"><div class="grid"><article class="tile"><h3>Our Mission</h3><p>To support patients and families with compassionate, individualized care at home.</p></article><article class="tile"><h3>Our Vision</h3><p>To be a trusted partner in home healthcare.</p></article><article class="tile"><h3>Our Values</h3><p>Respect, dignity, compassion and accountability.</p></article></div></div></section></main><footer><div class="wrap"><strong>ELARA HEALTHCARE LLP</strong><p>Home healthcare with compassion, dignity and respect.</p><p>Indiranagar, Bengaluru, Karnataka, India</p><small>© 2026 Elara Healthcare LLP</small></div></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Elara Healthcare LLP</title>
+<meta name="description" content="Learn about Elara Healthcare LLP, our experience, mission, vision, and commitment to compassionate home healthcare in Bengaluru.">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+:root {
+  --elara-purple: #593b77;
+  --elara-teal: #147b78;
+  --elara-cream: #faf8f4;
+  --elara-lavender: #f3edf7;
+  --elara-text: #514b55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.about-page {
+  background: var(--elara-cream);
+}
+
+.about-hero {
+  padding: 85px 22px;
+  text-align: center;
+  background: linear-gradient(135deg, #f5edf9, #edf8f6);
+}
+
+.about-hero .eyebrow {
+  color: var(--elara-teal);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.about-hero h1 {
+  font-family: Georgia, serif;
+  color: var(--elara-purple);
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #615a65;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 70px 22px;
+}
+
+.about-heading {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 4vw, 38px);
+  color: var(--elara-purple);
+  margin: 0 0 24px;
+}
+
+.about-intro {
+  max-width: 950px;
+  margin: auto;
+}
+
+.about-intro p {
+  font-size: 16px;
+  color: var(--elara-text);
+  line-height: 1.95;
+  margin: 0 0 22px;
+}
+
+.about-intro strong {
+  color: var(--elara-purple);
+}
+
+.about-subheading {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  color: var(--elara-teal);
+  margin: 35px 0 15px;
+}
+
+.experience-strip {
+  background: var(--elara-purple);
+  padding: 55px 22px;
+  text-align: center;
+  color: white;
+}
+
+.experience-strip h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 5vw, 46px);
+  color: white;
+  margin: 0 0 12px;
+}
+
+.experience-strip p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  color: #f4ebf8;
+}
+
+.mvv-section {
+  background: #f3eef6;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.mvv-card {
+  background: white;
+  border: 1px solid #e9dfed;
+  border-radius: 18px;
+  padding: 34px;
+  box-shadow: 0 8px 24px rgba(69, 43, 89, 0.05);
+}
+
+.mvv-card h3 {
+  font-family: Georgia, serif;
+  color: var(--elara-purple);
+  font-size: 27px;
+  margin: 0 0 17px;
+}
+
+.mvv-card p {
+  color: var(--elara-text);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.value-card {
+  background: white;
+  border: 1px solid #e9dfed;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(69, 43, 89, 0.04);
+}
+
+.value-card h3 {
+  font-family: Georgia, serif;
+  color: var(--elara-teal);
+  font-size: 23px;
+  margin: 0 0 12px;
+}
+
+.value-card p {
+  color: var(--elara-text);
+  line-height: 1.8;
+  margin: 0;
+  font-size: 14px;
+}
+
+.commitment-section {
+  background: linear-gradient(135deg, #f5edf9, #edf8f6);
+  text-align: center;
+}
+
+.commitment-section p {
+  max-width: 800px;
+  margin: 0 auto 28px;
+  color: var(--elara-text);
+  line-height: 1.95;
+  font-size: 16px;
+}
+
+.about-btn {
+  display: inline-block;
+  background: var(--elara-teal);
+  color: white;
+  text-decoration: none;
+  border-radius: 28px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background .2s;
+}
+
+.about-btn:hover {
+  background: var(--elara-purple);
+}
+
+.about-btn:focus-visible {
+  outline: 3px solid var(--elara-purple);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .mvv-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    padding: 48px 20px;
+  }
+
+  .about-hero {
+    padding: 60px 20px;
+  }
+
+  .mvv-card {
+    padding: 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="nav">
+  <a class="brand" href="index.html">
+    ELARA HEALTHCARE
+    <small>LLP · BENGALURU</small>
+  </a>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a class="active" href="about.html">About Us</a>
+    <a href="leadership.html">Leadership</a>
+    <a class="action" href="request-care.html">Request Care</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+</header>
+
+<main class="about-page">
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="eyebrow">Our Story</div>
+  <h1>Care Guided by Compassion</h1>
+  <p>
+    Delivering quality home healthcare through
+    experience, dedication, and a people-first approach.
+  </p>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="about-container">
+  <div class="about-intro">
+
+    <h2 class="about-heading">Who We Are</h2>
+
+    <p>
+      At <strong>Elara Healthcare LLP</strong>, we believe
+      that quality healthcare should be accessible,
+      personalized, and delivered with compassion.
+      Based in <strong>Bengaluru, Karnataka</strong>,
+      we are a home healthcare organization dedicated
+      to supporting individuals and families through
+      professional, reliable, and patient-centered care.
+    </p>
+
+    <p>
+      Built on <strong>over 20 years of collective
+      healthcare experience</strong>, our foundation
+      brings together knowledge in healthcare management,
+      patient support, clinical services, and
+      compassionate caregiving.
+    </p>
+
+    <p>
+      We understand that every individual has unique
+      healthcare needs. Our approach focuses on delivering
+      care that respects their comfort, dignity,
+      independence, and overall well-being.
+    </p>
+
+    <p>
+      Our comprehensive range of home healthcare services
+      includes doctor consultations at home, nursing care,
+      elder care, physiotherapy, rehabilitation,
+      mother and baby care, medical equipment support,
+      and specialized services such as critical care
+      and ICU setup at home.
+    </p>
+
+    <p>
+      We aim to support individuals recovering from illness
+      or surgery, older adults requiring daily assistance,
+      patients managing ongoing healthcare needs,
+      and families seeking dependable professional
+      care for their loved ones.
+    </p>
+
+    <h3 class="about-subheading">Our Approach to Care</h3>
+
+    <p>
+      We believe that effective healthcare involves more
+      than medical treatment. It requires understanding
+      each patient's needs, communicating with families,
+      maintaining professional standards, and creating
+      a supportive environment that promotes recovery
+      and well-being.
+    </p>
+
+    <p>
+      At Elara Healthcare LLP, we strive to combine
+      healthcare expertise with empathy, responsibility,
+      and a personal approach to care.
+    </p>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-strip">
+  <h2>20+ Years of Healthcare Experience</h2>
+  <p>
+    Two decades of collective healthcare expertise,
+    bringing together professional knowledge,
+    compassionate service, and a commitment
+    to patient dignity and well-being.
+  </p>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mvv-section">
+  <div class="about-container">
+
+    <div class="mvv-grid">
+
+      <article class="mvv-card">
+        <h3>Our Mission</h3>
+        <p>
+          To provide compassionate, reliable,
+          and personalized home healthcare
+          that promotes comfort, dignity,
+          safety, and well-being.
+        </p>
+      </article>
+
+      <article class="mvv-card">
+        <h3>Our Vision</h3>
+        <p>
+          To become a trusted home healthcare
+          provider recognized for quality care,
+          professionalism, and a commitment
+          to improving lives.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="about-container">
+
+  <div class="section-heading" style="text-align:center;margin-bottom:38px;">
+    <h2 class="about-heading">Our Core Values</h2>
+    <p style="color:#6d6570;">
+      The principles that guide every aspect of our care.
+    </p>
+  </div>
+
+  <div class="values-grid">
+
+    <article class="value-card">
+      <h3>Compassion</h3>
+      <p>
+        Caring for every individual with
+        kindness, empathy, and respect.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Trust</h3>
+      <p>
+        Building relationships through honesty,
+        reliability, and transparency.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Care</h3>
+      <p>
+        Providing personalized support that
+        prioritizes patient comfort and safety.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Integrity</h3>
+      <p>
+        Maintaining ethical standards,
+        accountability, and professionalism.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Excellence</h3>
+      <p>
+        Continuously improving the quality
+        of our healthcare services.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section class="commitment-section">
+  <div class="about-container">
+
+    <h2 class="about-heading">Our Commitment</h2>
+
+    <p>
+      To deliver compassionate, dependable,
+      and personalized home healthcare while
+      protecting patient dignity, encouraging
+      independence, and providing reassurance
+      to families.
+    </p>
+
+    <a href="leadership.html" class="about-btn">
+      Meet Our Leadership
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>ELARA HEALTHCARE LLP</strong>
+    <p>Home healthcare with compassion, dignity and respect.</p>
+    <p>Indiranagar, Bengaluru, Karnataka, India</p>
+    <small>© 2026 Elara Healthcare LLP</small>
+  </div>
+</footer>
+
+</body>
+</html>
