@@ -5,640 +5,487 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leadership & Advisors | Elara Healthcare LLP</title>
-<meta name="description" content="Meet the leadership team and advisors of Elara Healthcare LLP in Bengaluru.">
+<meta name="description" content="Meet the leadership and advisory team of Elara Healthcare LLP in Bengaluru.">
 <link rel="stylesheet" href="style.css">
 
 <style>
 :root {
-  --purple: #593b77;
-  --teal: #147b78;
-  --cream: #faf8f4;
-  --lavender: #f2edf6;
-  --border: #e6dbea;
-  --text: #514b55;
+  --purple:#593b77;
+  --teal:#147b78;
+  --cream:#faf8f4;
+  --lavender:#f2edf6;
+  --text:#514b55;
+  --border:#e6dbea;
 }
-
-* { box-sizing: border-box; }
-
-.leadership-page {
-  background: var(--cream);
-  min-height: 100vh;
+* {box-sizing:border-box}
+body {margin:0}
+.leadership-page {background:var(--cream)}
+.hero {
+  background:linear-gradient(135deg,#f7f1fb,#eaf8f5);
+  text-align:center;
+  padding:75px 20px;
 }
-
-.leadership-hero {
-  text-align: center;
-  padding: 75px 20px 65px;
-  background: linear-gradient(135deg,#f7f1fb,#edf9f7);
+.eyebrow {
+  color:var(--teal);
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:700;
+  text-transform:uppercase;
 }
-
-.leadership-hero .eyebrow {
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
+.hero h1 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:clamp(34px,5vw,52px);
+  margin:16px 0;
 }
-
-.leadership-hero h1 {
-  font-family: Georgia,serif;
-  color: var(--purple);
-  font-size: clamp(34px,5vw,52px);
-  margin: 0 0 18px;
+.hero p {
+  color:var(--text);
+  line-height:1.8;
+  max-width:700px;
+  margin:auto;
 }
-
-.leadership-hero p {
-  max-width: 690px;
-  margin: auto;
-  color: #5e5866;
-  line-height: 1.8;
+.section {
+  max-width:1200px;
+  margin:auto;
+  padding:65px 22px;
 }
-
-.team-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 65px 22px;
+.section-title {
+  text-align:center;
+  margin-bottom:42px;
 }
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 42px;
+.section-title h2 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:35px;
+  margin:0 0 12px;
 }
-
-.section-heading h2 {
-  font-family: Georgia,serif;
-  color: var(--purple);
-  font-size: 35px;
-  margin: 0 0 12px;
+.section-title p {
+  color:var(--text);
+  line-height:1.7;
 }
-
-.section-heading p {
-  color: #6d6570;
-  line-height: 1.7;
-}
-
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 28px;
-  align-items: stretch;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
 }
-
 .team-card {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(69,43,89,.07);
-  transition: transform .25s,box-shadow .25s;
+  min-width:0;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 8px 25px rgba(69,43,89,.07);
 }
-
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(69,43,89,.12);
-}
-
 .photo-frame {
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-  background: var(--lavender);
+  height:350px;
+  background:var(--lavender);
+  overflow:hidden;
 }
-
-.team-photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
+.photo-frame img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 23%;
 }
-
-.photo-anand { object-position: center 22%; }
-.photo-amutha { object-position: center 24%; }
-.photo-antony { object-position: center 20%; }
-.photo-godlive { object-position: center 24%; }
-.photo-lona { object-position: center 24%; }
-.photo-appache { object-position: center 25%; }
-.photo-diwakar { object-position: center 25%; }
-
+.photo-frame img.antony {
+  object-fit:contain;
+  object-position:center;
+}
 .team-info {
-  padding: 25px 23px 27px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  padding:25px 23px 27px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
 }
-
 .team-info h3 {
-  font-family: Georgia,serif;
-  color: var(--purple);
-  font-size: 23px;
-  margin: 0 0 9px;
-  line-height: 1.35;
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:23px;
+  margin:0 0 9px;
 }
-
-.team-role {
-  color: var(--teal);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
+.role {
+  color:var(--teal);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:18px;
 }
-
-.team-intro {
-  font-size: 14px;
-  color: #625d65;
-  line-height: 1.8;
-  margin: 0 0 18px;
+.intro {
+  color:var(--text);
+  font-size:14px;
+  line-height:1.8;
+  margin:0 0 20px;
 }
-
-.team-details {
-  border-top: 1px solid #eee7f0;
-  padding-top: 16px;
-  margin-top: auto;
+details {
+  border-top:1px solid #eee7f0;
+  padding-top:16px;
+  margin-top:auto;
 }
-
-.team-details summary {
-  display: inline-block;
-  background: var(--purple);
-  color: white;
-  padding: 11px 22px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
+summary {
+  display:inline-block;
+  list-style:none;
+  background:var(--purple);
+  color:#fff;
+  padding:11px 22px;
+  border-radius:25px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
 }
-
-.team-details summary::-webkit-details-marker {
-  display: none;
+summary::-webkit-details-marker {display:none}
+summary:hover {background:var(--teal)}
+summary:focus-visible {
+  outline:3px solid var(--teal);
+  outline-offset:3px;
 }
-
-.team-details summary:hover {
-  background: var(--teal);
+.bio {
+  margin-top:20px;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.85;
 }
-
-.team-details summary:focus-visible {
-  outline: 3px solid var(--teal);
-  outline-offset: 3px;
+.bio ul {padding-left:19px}
+.bio li {margin-bottom:9px}
+.advisors {
+  background:var(--lavender);
 }
-
-.bio-content {
-  margin-top: 22px;
-  color: var(--text);
-  font-size: 14px;
-  line-height: 1.85;
-}
-
-.bio-content p {
-  margin: 0 0 14px;
-}
-
-.bio-content ul {
-  padding-left: 19px;
-  margin: 10px 0;
-}
-
-.bio-content li {
-  margin-bottom: 10px;
-}
-
-.advisor-section {
-  background: #f1edf5;
-  padding: 70px 20px 85px;
-}
-
-.advisor-inner {
-  max-width: 1200px;
-  margin: auto;
-}
-
 .advisor-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,380px));
-  gap: 30px;
-  justify-content: center;
-  align-items: stretch;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,380px));
+  gap:28px;
+  justify-content:center;
 }
-
-.advisor-label {
-  display: inline-block;
-  align-self: flex-start;
-  background: #e8f5f2;
-  color: var(--teal);
-  padding: 7px 13px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
+.advisor-tag {
+  color:var(--teal);
+  background:#e8f5f2;
+  padding:7px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+  align-self:flex-start;
+  margin-bottom:15px;
 }
-
-.leadership-footer-note {
-  text-align: center;
-  padding: 50px 20px;
+.bottom {
+  text-align:center;
+  padding:55px 20px;
 }
-
-.leadership-footer-note h2 {
-  font-family: Georgia,serif;
-  color: var(--purple);
-  font-size: 28px;
+.bottom h2 {
+  color:var(--purple);
+  font-family:Georgia,serif;
 }
-
-.leadership-footer-note p {
-  max-width: 600px;
-  margin: 12px auto 22px;
-  color: #645e67;
-  line-height: 1.8;
+.bottom p {
+  max-width:650px;
+  margin:15px auto 25px;
+  line-height:1.8;
+  color:var(--text);
 }
-
-.leadership-contact-btn {
-  display: inline-block;
-  padding: 13px 28px;
-  border-radius: 30px;
-  background: var(--teal);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
+.cta {
+  display:inline-block;
+  background:var(--teal);
+  color:#fff;
+  padding:13px 27px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
 }
-
 @media(max-width:850px) {
-  .team-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
+  .team-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
 @media(max-width:600px) {
-  .team-grid,.advisor-grid {
-    grid-template-columns: 1fr;
-  }
-  .team-section { padding: 45px 18px; }
-  .leadership-hero { padding: 55px 20px; }
-  .section-heading h2 { font-size: 29px; }
-  .photo-frame { height: 350px; }
+  .team-grid,.advisor-grid {grid-template-columns:1fr}
+  .section {padding:45px 18px}
+  .photo-frame {height:350px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
 <nav class="nav">
-  <a class="brand" href="index.html">
-    ELARA HEALTHCARE
-    <small>LLP · BENGALURU</small>
-  </a>
-
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About Us</a>
-    <a class="active" href="leadership.html">Leadership</a>
-    <a class="action" href="request-care.html">Request Care</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html">Contact</a>
-  </div>
+<a class="brand" href="index.html">
+ELARA HEALTHCARE
+<small>LLP · BENGALURU</small>
+</a>
+<div class="links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About Us</a>
+<a class="active" href="leadership.html">Leadership</a>
+<a class="action" href="request-care.html">Request Care</a>
+<a href="careers.html">Careers</a>
+<a href="contact.html">Contact</a>
+</div>
 </nav>
 </header>
 
 <main class="leadership-page">
-
-<section class="leadership-hero">
-  <div class="eyebrow">The People Behind Elara</div>
-  <h1>Meet Our Leadership</h1>
-  <p>
-    Guided by experience, strengthened by compassion,
-    and united by a commitment to delivering
-    dependable, dignified healthcare.
-  </p>
+<section class="hero">
+<div class="eyebrow">The People Behind Elara</div>
+<h1>Meet Our Leadership</h1>
+<p>
+Guided by experience, strengthened by compassion,
+and united by a commitment to delivering
+dependable, dignified healthcare.
+</p>
 </section>
 
-<section class="team-section">
+<section class="section">
+<div class="section-title">
+<h2>Our Leadership Team</h2>
+<p>Dedicated professionals shaping the future of Elara Healthcare LLP.</p>
+</div>
 
-  <div class="section-heading">
-    <h2>Our Leadership Team</h2>
-    <p>
-      Dedicated professionals shaping the future
-      of Elara Healthcare LLP.
-    </p>
-  </div>
+<div class="team-grid">
 
-  <div class="team-grid">
+<!-- ANAND -->
+<article class="team-card">
+<div class="photo-frame">
+<img src="Anand.jpg" alt="Dr. D. N. Anand" loading="lazy">
+</div>
+<div class="team-info">
+<h3>Dr. D. N. Anand</h3>
+<div class="role">Managing Director</div>
+<p class="intro">
+Healthcare business leader with over 24 years
+of experience in strategic growth, partnerships,
+and international market development.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>
+Dr. D. N. Anand brings more than 24 years of experience
+in healthcare business development, strategic leadership,
+and international market expansion.
+</p>
+<ul>
+<li>Experience across MedTech, medical consumables, home healthcare, and elder care.</li>
+<li>Supported healthcare expansion across India, Sri Lanka, Bangladesh, and Nepal.</li>
+<li>Recognized for contributions to healthcare.</li>
+<li>Recipient of the Dr. B. R. Ambedkar Award for Healthcare Excellence.</li>
+<li>Experience in international strategic partnerships.</li>
+<li>Associated with Rotary and humanitarian initiatives.</li>
+</ul>
+</div>
+</details>
+</div>
+</article>
 
-    <!-- DR D N ANAND -->
-    <article class="team-card">
-      <div class="photo-frame">
-        <img class="team-photo photo-anand"
-             src="Anand.jpg"
-             alt="Dr. D. N. Anand"
-             loading="lazy">
-      </div>
+<!-- AMUTHA -->
+<article class="team-card">
+<div class="photo-frame">
+<img src="Amutha Mary.jpg" alt="Dr. Amutha Mary M" loading="lazy">
+</div>
+<div class="team-info">
+<h3>Dr. Amutha Mary M</h3>
+<div class="role">Director</div>
+<p class="intro">
+Healthcare professional with over 25 years
+of experience in hospital administration,
+healthcare management, and community service.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p><strong>Qualifications:</strong> RN, DHA, MBA, PH</p>
+<p>
+Dr. Amutha Mary M has extensive experience in
+healthcare administration, corporate management,
+strategic planning, and healthcare development.
+</p>
+<ul>
+<li>Former Operations Manager in corporate healthcare organizations.</li>
+<li>Experience in quality management, marketing, and business alliances.</li>
+<li>Recipient of a Women Empowerment Award from the Tamil Nadu Government.</li>
+<li>Recognized by Global Human Peace University, Delaware, USA.</li>
+<li>District Reporter, Indian Press Union, Karnataka.</li>
+<li>Contributed to pandemic welfare, disaster relief, and community service.</li>
+</ul>
+</div>
+</details>
+</div>
+</article>
 
-      <div class="team-info">
-        <h3>Dr. D. N. Anand</h3>
-        <div class="team-role">Managing Director</div>
+<!-- ANTONY -->
+<article class="team-card">
+<div class="photo-frame">
+<img class="antony" src="Antony yesudas.jpg"
+alt="Mr. Antony Yesudoss P" loading="lazy">
+</div>
+<div class="team-info">
+<h3>Mr. Antony Yesudoss P</h3>
+<div class="role">Director</div>
+<p class="intro">
+Supporting Elara Healthcare LLP's leadership
+and its commitment to dependable,
+high-quality healthcare services.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>Detailed professional biography will be added soon.</p>
+</div>
+</details>
+</div>
+</article>
 
-        <p class="team-intro">
-          Healthcare business leader with over 24 years
-          of experience in strategic growth, partnerships,
-          and international market development.
-        </p>
+<!-- GODLIVE -->
+<article class="team-card">
+<div class="photo-frame">
+<img src="Godlive.jpg" alt="Godlive Jyothi" loading="lazy">
+</div>
+<div class="team-info">
+<h3>Godlive Jyothi</h3>
+<div class="role">Digital Operations &amp; Analytics Manager</div>
+<p class="intro">
+Supporting strategic digital initiatives,
+operational efficiency, and data-driven
+decision-making to strengthen organizational performance.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>
+Godlive Jyothi contributes to Elara Healthcare LLP's
+digital operations and organizational development,
+aligning technology and analytics with business objectives.
+</p>
+<ul>
+<li>Digital strategy and operational planning.</li>
+<li>Data analytics, performance reporting, and business insights.</li>
+<li>Technology coordination and digital process improvement.</li>
+<li>Operational workflow optimization and efficiency.</li>
+<li>Supporting informed decision-making and organizational growth.</li>
+</ul>
+</div>
+</details>
+</div>
+</article>
 
-        <details class="team-details">
-          <summary>Learn More</summary>
-          <div class="bio-content">
-            <p>
-              Dr. D. N. Anand brings more than 24 years
-              of experience in healthcare business development,
-              strategic leadership, and international market expansion.
-            </p>
-            <ul>
-              <li>Experience across MedTech, medical consumables, home healthcare, and elder care.</li>
-              <li>Supported healthcare expansion across India, Sri Lanka, Bangladesh, and Nepal.</li>
-              <li>Recognized by the University of Delaware, USA, for contributions to healthcare.</li>
-              <li>Recipient of the Dr. B. R. Ambedkar Award for Healthcare Excellence.</li>
-              <li>Experience in international strategic partnerships.</li>
-              <li>Associated with Rotary International and international human rights initiatives.</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </article>
+<!-- LONA -->
+<article class="team-card">
+<div class="photo-frame">
+<img src="Lona sabatini.JPG" alt="Lona Sabatini" loading="lazy">
+</div>
+<div class="team-info">
+<h3>Lona Sabatini</h3>
+<div class="role">Accounts Manager</div>
+<p class="intro">
+Supporting financial operations,
+accounts administration, and responsible
+financial coordination within Elara Healthcare LLP.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>
+As Accounts Manager, Lona Sabatini supports
+financial administration, accurate documentation,
+and the coordination of accounting activities.
+</p>
+<ul>
+<li>Managing day-to-day accounting operations and financial records.</li>
+<li>Coordinating invoices, billing, and payment processing.</li>
+<li>Monitoring accounts payable and receivable.</li>
+<li>Supporting budgeting, expense tracking, and financial planning.</li>
+<li>Preparing financial reports and documentation.</li>
+<li>Assisting with account reconciliations.</li>
+<li>Supporting compliance with accounting procedures.</li>
+</ul>
+</div>
+</details>
+</div>
+</article>
 
-    <!-- DR AMUTHA MARY -->
-    <article class="team-card">
-      <div class="photo-frame">
-        <img class="team-photo photo-amutha"
-             src="Amutha Mary.jpg"
-             alt="Dr. Amutha Mary M"
-             loading="lazy">
-      </div>
-
-      <div class="team-info">
-        <h3>Dr. Amutha Mary M</h3>
-        <div class="team-role">Director</div>
-
-        <p class="team-intro">
-          Healthcare professional with over 25 years
-          of experience in hospital administration,
-          healthcare management, and community service.
-        </p>
-
-        <details class="team-details">
-          <summary>Learn More</summary>
-          <div class="bio-content">
-            <p><strong>Qualifications:</strong> RN, DHA, MBA, PH</p>
-            <p>
-              Dr. Amutha Mary M has over 25 years
-              of experience in hospital administration,
-              clinical leadership, and healthcare management.
-            </p>
-            <ul>
-              <li>Former Operations Manager in corporate healthcare organizations.</li>
-              <li>Experience in strategic planning, quality management, marketing, and business alliances.</li>
-              <li>Recipient of a Women Empowerment Award from the Tamil Nadu Government.</li>
-              <li>Recognized by Global Human Peace University, Delaware, USA, for social service.</li>
-              <li>District Reporter, Indian Press Union (IPU), Karnataka.</li>
-              <li>Contributed to pandemic welfare, disaster relief, and emergency medical support.</li>
-              <li>Involved in international community service initiatives.</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </article>
-
-    <!-- ANTONY YESUDOSS -->
-    <article class="team-card">
-      <div class="photo-frame">
-        <img class="team-photo photo-antony"
-             src="Antony yesudas.jpg"
-             alt="Mr. Antony Yesudoss P"
-             loading="lazy">
-      </div>
-
-      <div class="team-info">
-        <h3>Mr. Antony Yesudoss P</h3>
-        <div class="team-role">Director</div>
-
-        <p class="team-intro">
-          Part of Elara Healthcare LLP's leadership team,
-          supporting the organization's commitment
-          to quality healthcare services.
-        </p>
-
-        <details class="team-details">
-          <summary>Learn More</summary>
-          <div class="bio-content">
-            <p>
-              Detailed professional biography
-              will be added soon.
-            </p>
-          </div>
-        </details>
-      </div>
-    </article>
-
-    <!-- GODLIVE JYOTHI -->
-    <article class="team-card">
-      <div class="photo-frame">
-        <img class="team-photo photo-godlive"
-             src="Godlive.jpg"
-             alt="Godlive Jyothi"
-             loading="lazy">
-      </div>
-
-      <div class="team-info">
-        <h3>Godlive Jyothi</h3>
-        <div class="team-role">
-          Digital Operations &amp; Analytics Manager
-        </div>
-
-        <p class="team-intro">
-          Driving digital transformation,
-          operational efficiency, and data-driven
-          initiatives to support Elara Healthcare's
-          organizational growth.
-        </p>
-
-        <details class="team-details">
-          <summary>Learn More</summary>
-          <div class="bio-content">
-            <p>
-              Godlive Jyothi supports Elara Healthcare LLP's
-              digital strategy and operational development,
-              focusing on the effective use of technology,
-              analytics, and integrated digital solutions.
-            </p>
-            <ul>
-              <li>Digital strategy and technology-driven initiatives.</li>
-              <li>Data analytics, reporting, and operational insights.</li>
-              <li>Digital systems coordination and process optimization.</li>
-              <li>Supporting organizational efficiency and digital growth.</li>
-              <li>Enhancing digital engagement and information management.</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </article>
-
-    <!-- LONA SABATINI -->
-    <article class="team-card">
-      <div class="photo-frame">
-        <img class="team-photo photo-lona"
-             src="Lona sabatini.JPG"
-             alt="Lona Sabatini"
-             loading="lazy">
-      </div>
-
-      <div class="team-info">
-        <h3>Lona Sabatini</h3>
-        <div class="team-role">Accounts Manager</div>
-
-        <p class="team-intro">
-          Supporting financial administration,
-          accounts coordination, and responsible
-          financial management at Elara Healthcare LLP.
-        </p>
-
-        <details class="team-details">
-          <summary>Learn More</summary>
-          <div class="bio-content">
-            <p>
-              Lona Sabatini serves as Accounts Manager
-              at Elara Healthcare LLP, supporting
-              the organization's financial administration
-              and accounts management functions.
-            </p>
-            <ul>
-              <li>Accounts management and financial coordination.</li>
-              <li>Supporting financial documentation and recordkeeping.</li>
-              <li>Coordinating billing and payment-related processes.</li>
-              <li>Supporting financial reporting and administrative efficiency.</li>
-              <li>Promoting accuracy, accountability, and organized financial operations.</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </article>
-
-  </div>
+</div>
 </section>
 
 <!-- ADVISORS -->
+<section class="advisors">
+<div class="section">
+<div class="section-title">
+<h2>Our Advisors</h2>
+<p>Experienced professionals providing guidance, knowledge, and valuable perspectives.</p>
+</div>
 
-<section class="advisor-section">
-  <div class="advisor-inner">
+<div class="advisor-grid">
 
-    <div class="section-heading">
-      <h2>Our Advisors</h2>
-      <p>
-        Experienced professionals providing guidance,
-        knowledge, and valuable perspectives.
-      </p>
-    </div>
+<article class="team-card">
+<div class="photo-frame">
+<img src="Apache.JPG" alt="Dr. Appache Gowda" loading="lazy">
+</div>
+<div class="team-info">
+<span class="advisor-tag">ADVISORY TEAM</span>
+<h3>Dr. Appache Gowda</h3>
+<div class="role">Senior Medical Advisor</div>
+<p class="intro">Serving as Senior Medical Advisor to Elara Healthcare LLP.</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>Detailed professional biography will be added soon.</p>
+</div>
+</details>
+</div>
+</article>
 
-    <div class="advisor-grid">
+<article class="team-card">
+<div class="photo-frame">
+<img src="Diwakar.jpg" alt="Lt Col Divakara Naidu" loading="lazy">
+</div>
+<div class="team-info">
+<span class="advisor-tag">ADVISORY TEAM</span>
+<h3>Lt Col Divakara Naidu</h3>
+<div class="role">Advisor</div>
+<p class="intro">
+Soldier, leader, mentor, and humanitarian,
+guided by service, honour, discipline,
+compassion, and commitment.
+</p>
+<details>
+<summary>Learn More</summary>
+<div class="bio">
+<p>
+Lt Col Divakara Naidu brings a leadership
+philosophy rooted in service, honour, and commitment.
+</p>
+<ul>
+<li>Soldier, leader, mentor, and humanitarian.</li>
+<li>Emphasizes discipline, compassion, and empathy in leadership.</li>
+<li>Passionate about supporting people and communities.</li>
+<li>Encourages courage and resilience during adversity.</li>
+<li>Inspires others through purposeful leadership and service.</li>
+</ul>
+</div>
+</details>
+</div>
+</article>
 
-      <!-- DR APPACHE GOWDA -->
-      <article class="team-card">
-        <div class="photo-frame">
-          <img class="team-photo photo-appache"
-               src="Apache.JPG"
-               alt="Dr. Appache Gowda"
-               loading="lazy">
-        </div>
-
-        <div class="team-info">
-          <span class="advisor-label">ADVISORY TEAM</span>
-          <h3>Dr. Appache Gowda</h3>
-          <div class="team-role">Senior Medical Advisor</div>
-
-          <p class="team-intro">
-            Serving as Senior Medical Advisor
-            to Elara Healthcare LLP.
-          </p>
-
-          <details class="team-details">
-            <summary>Learn More</summary>
-            <div class="bio-content">
-              <p>
-                Detailed professional biography
-                will be added soon.
-              </p>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <!-- LT COL DIVAKARA NAIDU -->
-      <article class="team-card">
-        <div class="photo-frame">
-          <img class="team-photo photo-diwakar"
-               src="Diwakar.jpg"
-               alt="Lt Col Divakara Naidu"
-               loading="lazy">
-        </div>
-
-        <div class="team-info">
-          <span class="advisor-label">ADVISORY TEAM</span>
-          <h3>Lt Col Divakara Naidu</h3>
-          <div class="team-role">Advisor</div>
-
-          <p class="team-intro">
-            Soldier, leader, mentor, and humanitarian,
-            guided by service, honour, discipline,
-            compassion, and commitment.
-          </p>
-
-          <details class="team-details">
-            <summary>Learn More</summary>
-            <div class="bio-content">
-              <p>
-                Lt Col Divakara Naidu brings a leadership
-                philosophy rooted in service, honour,
-                and commitment.
-              </p>
-              <ul>
-                <li>Soldier, leader, mentor, and humanitarian.</li>
-                <li>Emphasizes discipline, compassion, and empathy in leadership.</li>
-                <li>Passionate about supporting people and building communities.</li>
-                <li>Encourages courage and resilience during adversity.</li>
-                <li>Inspires others through purposeful leadership and service to the nation.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </article>
-
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
-<section class="leadership-footer-note">
-  <h2>Compassion. Trust. Care.</h2>
-  <p>
-    Together, our leadership and advisors are committed
-    to strengthening the quality and accessibility
-    of home healthcare.
-  </p>
-  <a class="leadership-contact-btn" href="contact.html">
-    Get in Touch
-  </a>
+<section class="bottom">
+<h2>Compassion. Trust. Care.</h2>
+<p>
+Together, our leadership and advisors are committed
+to strengthening the quality and accessibility of home healthcare.
+</p>
+<a class="cta" href="contact.html">Get in Touch</a>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <strong>ELARA HEALTHCARE LLP</strong>
-    <p>Home healthcare with compassion, dignity and respect.</p>
-    <p>Indiranagar, Bengaluru, Karnataka, India</p>
-    <small>© 2026 Elara Healthcare LLP</small>
-  </div>
+<div class="wrap">
+<strong>ELARA HEALTHCARE LLP</strong>
+<p>Home healthcare with compassion, dignity and respect.</p>
+<p>Indiranagar, Bengaluru, Karnataka, India</p>
+<small>© 2026 Elara Healthcare LLP</small>
+</div>
 </footer>
-
 </body>
 </html>
