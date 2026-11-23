@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Leadership & Advisors | Elara Healthcare LLP</title>
-<meta name="description" content="Meet the leadership team and advisors of Elara Healthcare LLP.">
+<meta name="description" content="Meet the leadership team and advisors of Elara Healthcare LLP in Bengaluru.">
 
 <link rel="stylesheet" href="style.css">
 
@@ -84,11 +84,13 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .team-card {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: white;
   border: 1px solid var(--border);
@@ -102,39 +104,65 @@
   box-shadow: 0 14px 32px rgba(69, 43, 89, 0.12);
 }
 
-/* PHOTO PLACEMENT FIX */
+/* CONSISTENT PHOTO FRAMES */
+
 .photo-frame {
   width: 100%;
   height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  background: #f2edf6;
+  background: var(--lavender);
+  position: relative;
 }
 
 .team-photo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 25%;
   display: block;
 }
 
-/* Individual photographs can be adjusted later */
-.photo-anand,
-.photo-amutha,
-.photo-antony,
-.photo-godlive,
-.photo-lona,
-.photo-appache,
+/* INDIVIDUAL PHOTO ALIGNMENT */
+
+/* Anand */
+.photo-anand {
+  object-position: center 22%;
+}
+
+/* Amutha Mary */
+.photo-amutha {
+  object-position: center 25%;
+}
+
+/* Antony: crop out excess background */
+.photo-antony {
+  object-position: center 65%;
+}
+
+/* Godlive */
+.photo-godlive {
+  object-position: center 20%;
+}
+
+/* Lona */
+.photo-lona {
+  object-position: center 20%;
+}
+
+/* Advisors */
+.photo-appache {
+  object-position: center 25%;
+}
+
 .photo-diwakar {
-  object-fit: contain;
-  object-position: center center;
+  object-position: center 25%;
 }
 
 .team-info {
   padding: 25px 23px 27px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .team-info h3 {
@@ -164,6 +192,7 @@
 .team-details {
   border-top: 1px solid #eee7f0;
   padding-top: 16px;
+  margin-top: auto;
 }
 
 .team-details summary {
@@ -212,6 +241,7 @@
 }
 
 /* ADVISORS */
+
 .advisor-section {
   background: #f1edf5;
   padding: 70px 20px 85px;
@@ -227,11 +257,12 @@
   grid-template-columns: repeat(2, minmax(0, 380px));
   gap: 30px;
   justify-content: center;
-  align-items: start;
+  align-items: stretch;
 }
 
 .advisor-label {
   display: inline-block;
+  align-self: flex-start;
   background: #e8f5f2;
   color: var(--teal);
   padding: 7px 13px;
@@ -306,22 +337,20 @@
 
 <header>
 <nav class="nav">
+  <a class="brand" href="index.html">
+    ELARA HEALTHCARE
+    <small>LLP · BENGALURU</small>
+  </a>
 
-<a class="brand" href="index.html">
-  ELARA HEALTHCARE
-  <small>LLP · BENGALURU</small>
-</a>
-
-<div class="links">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About Us</a>
-  <a class="active" href="leadership.html">Leadership</a>
-  <a class="action" href="request-care.html">Request Care</a>
-  <a href="careers.html">Careers</a>
-  <a href="contact.html">Contact</a>
-</div>
-
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a class="active" href="leadership.html">Leadership</a>
+    <a class="action" href="request-care.html">Request Care</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 </header>
 
@@ -337,296 +366,322 @@
   </p>
 </section>
 
+<!-- LEADERSHIP TEAM -->
+
 <section class="team-section">
 
-<div class="section-heading">
-  <h2>Our Leadership Team</h2>
-  <p>
-    Dedicated professionals shaping the future
-    of Elara Healthcare LLP.
-  </p>
-</div>
-
-<div class="team-grid">
-
-<!-- DR ANAND -->
-<article class="team-card">
-
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-anand"
-      src="Anand.jpg"
-      alt="Dr. D. N. Anand"
-      loading="lazy">
+  <div class="section-heading">
+    <h2>Our Leadership Team</h2>
+    <p>
+      Dedicated professionals shaping the future
+      of Elara Healthcare LLP.
+    </p>
   </div>
 
-  <div class="team-info">
-    <h3>Dr. D. N. Anand</h3>
-    <div class="team-role">Managing Director</div>
+  <div class="team-grid">
 
-    <p class="team-intro">
-      Healthcare business leader with over 24 years
-      of experience in strategic growth, partnerships,
-      and international market development.
-    </p>
+    <!-- DR ANAND -->
+    <article class="team-card">
+      <div class="photo-frame">
+        <img
+          class="team-photo photo-anand"
+          src="Anand.jpg"
+          alt="Dr. D. N. Anand"
+          loading="lazy">
+      </div>
 
-    <details class="team-details">
-      <summary>Learn More</summary>
+      <div class="team-info">
+        <h3>Dr. D. N. Anand</h3>
+        <div class="team-role">Managing Director</div>
 
-      <div class="bio-content">
-        <p>
-          Dr. D. N. Anand brings more than 24 years
-          of experience in healthcare business development,
-          strategic leadership, and international market expansion.
+        <p class="team-intro">
+          Healthcare business leader with over 24 years
+          of experience in strategic growth, partnerships,
+          and international market development.
         </p>
 
-        <ul>
-          <li>Experience across MedTech, medical consumables, home healthcare, and elder care.</li>
-          <li>Supported healthcare expansion across India, Sri Lanka, Bangladesh, and Nepal.</li>
-          <li>Recognized by the University of Delaware, USA, for contributions to healthcare.</li>
-          <li>Recipient of the Dr. B. R. Ambedkar Award for Healthcare Excellence.</li>
-          <li>Experience in international strategic partnerships.</li>
-          <li>Associated with Rotary International and international human rights initiatives.</li>
-        </ul>
+        <details class="team-details">
+          <summary>Learn More</summary>
+
+          <div class="bio-content">
+            <p>
+              Dr. D. N. Anand brings more than 24 years
+              of experience in healthcare business
+              development, strategic leadership,
+              and international market expansion.
+            </p>
+
+            <ul>
+              <li>Experience across MedTech, medical consumables, home healthcare, and elder care.</li>
+              <li>Supported healthcare expansion across India, Sri Lanka, Bangladesh, and Nepal.</li>
+              <li>Recognized by the University of Delaware, USA, for contributions to healthcare.</li>
+              <li>Recipient of the Dr. B. R. Ambedkar Award for Healthcare Excellence.</li>
+              <li>Experience in international strategic partnerships.</li>
+              <li>Associated with Rotary International and international human rights initiatives.</li>
+            </ul>
+          </div>
+        </details>
       </div>
-    </details>
-  </div>
-</article>
+    </article>
 
-<!-- DR AMUTHA MARY -->
-<article class="team-card">
+    <!-- DR AMUTHA MARY -->
+    <article class="team-card">
+      <div class="photo-frame">
+        <img
+          class="team-photo photo-amutha"
+          src="Amutha Mary.jpg"
+          alt="Dr. Amutha Mary M"
+          loading="lazy">
+      </div>
 
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-amutha"
-      src="Amutha Mary.jpg"
-      alt="Dr. Amutha Mary M"
-      loading="lazy">
-  </div>
+      <div class="team-info">
+        <h3>Dr. Amutha Mary M</h3>
+        <div class="team-role">Director</div>
 
-  <div class="team-info">
-    <h3>Dr. Amutha Mary M</h3>
-    <div class="team-role">Director</div>
-
-    <p class="team-intro">
-      Healthcare professional with over 25 years
-      of experience in hospital administration,
-      healthcare management, and community service.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-
-      <div class="bio-content">
-        <p><strong>Qualifications:</strong> RN, DHA, MBA, PH</p>
-
-        <p>
-          Dr. Amutha Mary M has over 25 years
+        <p class="team-intro">
+          Healthcare professional with over 25 years
           of experience in hospital administration,
-          clinical leadership, and healthcare management.
+          healthcare management, and community service.
         </p>
 
-        <ul>
-          <li>Former Operations Manager in corporate healthcare organizations.</li>
-          <li>Experience in strategic planning, quality management, marketing, and business alliances.</li>
-          <li>Recipient of a Women Empowerment Award from the Tamil Nadu Government.</li>
-          <li>Recognized by Global Human Peace University, Delaware, USA, for social service.</li>
-          <li>District Reporter, Indian Press Union (IPU), Karnataka.</li>
-          <li>Contributed to pandemic welfare, disaster relief, and emergency medical support.</li>
-          <li>Involved in international community service initiatives.</li>
-        </ul>
+        <details class="team-details">
+          <summary>Learn More</summary>
+
+          <div class="bio-content">
+            <p><strong>Qualifications:</strong> RN, DHA, MBA, PH</p>
+
+            <p>
+              Dr. Amutha Mary M has over 25 years
+              of experience in hospital administration,
+              clinical leadership, and healthcare management.
+            </p>
+
+            <ul>
+              <li>Former Operations Manager in corporate healthcare organizations.</li>
+              <li>Experience in strategic planning, quality management, marketing, and business alliances.</li>
+              <li>Recipient of a Women Empowerment Award from the Tamil Nadu Government.</li>
+              <li>Recognized by Global Human Peace University, Delaware, USA, for social service.</li>
+              <li>District Reporter, Indian Press Union (IPU), Karnataka.</li>
+              <li>Contributed to pandemic welfare, disaster relief, and emergency medical support.</li>
+              <li>Involved in international community service initiatives.</li>
+            </ul>
+          </div>
+        </details>
       </div>
-    </details>
-  </div>
-</article>
+    </article>
 
-<!-- ANTONY -->
-<article class="team-card">
-
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-antony"
-      src="Antony.JPG"
-      alt="Mr. Antony Yesudoss P"
-      loading="lazy">
-  </div>
-
-  <div class="team-info">
-    <h3>Mr. Antony Yesudoss P</h3>
-    <div class="team-role">Director</div>
-
-    <p class="team-intro">
-      Part of Elara Healthcare LLP's leadership team,
-      supporting the organization's commitment
-      to quality healthcare services.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-      <div class="bio-content">
-        <p>Detailed professional biography will be added soon.</p>
+    <!-- ANTONY -->
+    <article class="team-card">
+      <div class="photo-frame">
+        <img
+          class="team-photo photo-antony"
+          src="Antony.JPG"
+          alt="Mr. Antony Yesudoss P"
+          loading="lazy">
       </div>
-    </details>
-  </div>
-</article>
 
-<!-- GODLIVE -->
-<article class="team-card">
+      <div class="team-info">
+        <h3>Mr. Antony Yesudoss P</h3>
+        <div class="team-role">Director</div>
 
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-godlive"
-      src="Godlive.jpg"
-      alt="Godlive Jyothi"
-      loading="lazy">
-  </div>
+        <p class="team-intro">
+          Part of Elara Healthcare LLP's leadership team,
+          supporting the organization's commitment
+          to quality healthcare services.
+        </p>
 
-  <div class="team-info">
-    <h3>Godlive Jyothi</h3>
-    <div class="team-role">Manager</div>
+        <details class="team-details">
+          <summary>Learn More</summary>
 
-    <p class="team-intro">
-      Supporting Elara Healthcare LLP's
-      organizational coordination and
-      service development.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-      <div class="bio-content">
-        <p>Detailed professional biography will be added soon.</p>
+          <div class="bio-content">
+            <p>
+              Detailed professional biography
+              will be added soon.
+            </p>
+          </div>
+        </details>
       </div>
-    </details>
-  </div>
-</article>
+    </article>
 
-<!-- LONA -->
-<article class="team-card">
-
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-lona"
-      src="Lona sabatini.JPG"
-      alt="Lona Sabatini"
-      loading="lazy">
-  </div>
-
-  <div class="team-info">
-    <h3>Lona Sabatini</h3>
-    <div class="team-role">Manager</div>
-
-    <p class="team-intro">
-      Supporting the management team
-      and Elara's commitment to
-      compassionate healthcare.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-      <div class="bio-content">
-        <p>Detailed professional biography will be added soon.</p>
+    <!-- GODLIVE -->
+    <article class="team-card">
+      <div class="photo-frame">
+        <img
+          class="team-photo photo-godlive"
+          src="Godlive.jpg"
+          alt="Godlive Jyothi"
+          loading="lazy">
       </div>
-    </details>
-  </div>
-</article>
 
-</div>
+      <div class="team-info">
+        <h3>Godlive Jyothi</h3>
+        <div class="team-role">
+          Digital Operations &amp; Analytics Manager
+        </div>
+
+        <p class="team-intro">
+          Managing Elara Healthcare LLP's digital
+          operations, website, online platforms,
+          and data analytics.
+        </p>
+
+        <details class="team-details">
+          <summary>Learn More</summary>
+
+          <div class="bio-content">
+            <p>
+              Oversees Elara Healthcare LLP's digital
+              operations, including website management,
+              online platforms, data analytics, reporting,
+              and digital systems.
+            </p>
+
+            <ul>
+              <li>Website development, updates, and maintenance.</li>
+              <li>Digital platform and online presence management.</li>
+              <li>Data analytics, reporting, and information organization.</li>
+              <li>Coordination of digital enquiries and administrative systems.</li>
+              <li>Supporting the organization's digital growth and operational efficiency.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- LONA -->
+    <article class="team-card">
+      <div class="photo-frame">
+        <img
+          class="team-photo photo-lona"
+          src="Lona sabatini.JPG"
+          alt="Lona Sabatini"
+          loading="lazy">
+      </div>
+
+      <div class="team-info">
+        <h3>Lona Sabatini</h3>
+        <div class="team-role">Manager</div>
+
+        <p class="team-intro">
+          Supporting the management team
+          and Elara's commitment to
+          compassionate healthcare.
+        </p>
+
+        <details class="team-details">
+          <summary>Learn More</summary>
+
+          <div class="bio-content">
+            <p>
+              Detailed professional biography
+              will be added soon.
+            </p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
 </section>
 
 <!-- ADVISORS -->
+
 <section class="advisor-section">
+  <div class="advisor-inner">
 
-<div class="advisor-inner">
+    <div class="section-heading">
+      <h2>Our Advisors</h2>
+      <p>
+        Experienced professionals providing guidance,
+        knowledge, and valuable perspectives.
+      </p>
+    </div>
 
-<div class="section-heading">
-  <h2>Our Advisors</h2>
-  <p>
-    Experienced professionals providing guidance,
-    knowledge, and valuable perspectives.
-  </p>
-</div>
+    <div class="advisor-grid">
 
-<div class="advisor-grid">
+      <!-- DR APPACHE GOWDA -->
+      <article class="team-card">
+        <div class="photo-frame">
+          <img
+            class="team-photo photo-appache"
+            src="Apache.JPG"
+            alt="Dr. Appache Gowda"
+            loading="lazy">
+        </div>
 
-<!-- DR APPACHE GOWDA -->
-<article class="team-card">
+        <div class="team-info">
+          <span class="advisor-label">ADVISORY TEAM</span>
 
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-appache"
-      src="Apache.JPG"
-      alt="Dr. Appache Gowda"
-      loading="lazy">
+          <h3>Dr. Appache Gowda</h3>
+          <div class="team-role">Senior Medical Advisor</div>
+
+          <p class="team-intro">
+            Serving as Senior Medical Advisor
+            to Elara Healthcare LLP.
+          </p>
+
+          <details class="team-details">
+            <summary>Learn More</summary>
+
+            <div class="bio-content">
+              <p>
+                Detailed professional biography
+                will be added soon.
+              </p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- LT COL DIVAKARA NAIDU -->
+      <article class="team-card">
+        <div class="photo-frame">
+          <img
+            class="team-photo photo-diwakar"
+            src="Diwakar.jpg"
+            alt="Lt Col Divakara Naidu"
+            loading="lazy">
+        </div>
+
+        <div class="team-info">
+          <span class="advisor-label">ADVISORY TEAM</span>
+
+          <h3>Lt Col Divakara Naidu</h3>
+          <div class="team-role">Advisor</div>
+
+          <p class="team-intro">
+            Soldier, leader, mentor, and humanitarian,
+            guided by service, honour, discipline,
+            compassion, and commitment.
+          </p>
+
+          <details class="team-details">
+            <summary>Learn More</summary>
+
+            <div class="bio-content">
+              <p>
+                Lt Col Divakara Naidu brings a
+                leadership philosophy rooted in
+                service, honour, and commitment.
+              </p>
+
+              <ul>
+                <li>Soldier, leader, mentor, and humanitarian.</li>
+                <li>Emphasizes discipline, compassion, and empathy in leadership.</li>
+                <li>Passionate about supporting people and building communities.</li>
+                <li>Encourages courage and resilience during adversity.</li>
+                <li>Inspires others through purposeful leadership and service to the nation.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </article>
+
+    </div>
   </div>
-
-  <div class="team-info">
-    <span class="advisor-label">ADVISORY TEAM</span>
-
-    <h3>Dr. Appache Gowda</h3>
-    <div class="team-role">Senior Medical Advisor</div>
-
-    <p class="team-intro">
-      Serving as Senior Medical Advisor
-      to Elara Healthcare LLP.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-      <div class="bio-content">
-        <p>Detailed professional biography will be added soon.</p>
-      </div>
-    </details>
-  </div>
-</article>
-
-<!-- LT COL DIVAKARA NAIDU -->
-<article class="team-card">
-
-  <div class="photo-frame">
-    <img
-      class="team-photo photo-diwakar"
-      src="Diwakar.jpg"
-      alt="Lt Col Divakara Naidu"
-      loading="lazy">
-  </div>
-
-  <div class="team-info">
-    <span class="advisor-label">ADVISORY TEAM</span>
-
-    <h3>Lt Col Divakara Naidu</h3>
-    <div class="team-role">Advisor</div>
-
-    <p class="team-intro">
-      Soldier, leader, mentor, and humanitarian,
-      guided by service, honour, discipline,
-      compassion, and commitment.
-    </p>
-
-    <details class="team-details">
-      <summary>Learn More</summary>
-
-      <div class="bio-content">
-        <p>
-          Lt Col Divakara Naidu brings a
-          leadership philosophy rooted in
-          service, honour, and commitment.
-        </p>
-
-        <ul>
-          <li>Soldier, leader, mentor, and humanitarian.</li>
-          <li>Emphasizes discipline, compassion, and empathy in leadership.</li>
-          <li>Passionate about supporting people and building communities.</li>
-          <li>Encourages courage and resilience during adversity.</li>
-          <li>Inspires others through purposeful leadership and service to the nation.</li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</article>
-
-</div>
-</div>
 </section>
+
+<!-- CONTACT SECTION -->
 
 <section class="leadership-footer-note">
   <h2>Compassion. Trust. Care.</h2>
