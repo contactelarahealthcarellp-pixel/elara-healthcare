@@ -1,38 +1,656 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Careers | Elara Healthcare LLP</title><link rel="stylesheet" href="style.css"><style>.entry-form{display:grid;gap:14px}.entry-form label{font-size:13px;font-weight:700;color:#593b77;display:grid;gap:5px}.entry-form input,.entry-form select,.entry-form textarea{width:100%;padding:12px;border:1px solid #d8d5dd;border-radius:5px;font:inherit;color:#26343b;background:white}.entry-form textarea{min-height:110px;resize:vertical}.entry-form button{background:#593b77;color:white;border:0;border-radius:5px;padding:14px 20px;font-weight:700;cursor:pointer}.entry-form button:disabled{opacity:.65;cursor:wait}.entry-form .message{min-height:24px;font-size:14px}.entry-form .message.error{color:#a32132}.entry-form .message.success{color:#176a4c}.entry-form .hint{font-size:12px;color:#657176}.entry-form .consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;color:#445}.entry-form .consent input{width:auto;margin-top:5px}</style></head><body><header><nav class="nav"><a class="brand" href="index.html">ELARA HEALTHCARE<small>LLP · BENGALURU</small></a><div class="links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="leadership.html">Leadership</a><a href="request-care.html">Request Care</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div></nav></header><main><section class="page-head"><div class="wrap"><div class="eyebrow">JOIN OUR TEAM</div><h1>Build a career in compassionate care</h1><p>Apply to work with Elara Healthcare LLP.</p></div></section><section class="section"><div class="wrap two"><div><h2>Make a difference through care.</h2><p>We welcome healthcare professionals and caregivers committed to compassionate, dependable service.</p><p>Complete the form and our team will review your application.</p></div><div class="form-panel"><h3>Join Our Team</h3><form class="entry-form" data-elara-form="job_applications"><label>Full name *<input name="full_name" autocomplete="name" required maxlength="120"></label><label>Phone number *<input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label><label>Email *<input name="email" type="email" autocomplete="email" required maxlength="180"></label><label>Role interested in *<select name="role" required><option value="">Choose a role</option><option>Registered Nurse</option><option>Caregiver</option><option>Physiotherapist</option><option>Doctor</option><option>Healthcare Coordinator</option><option>Other</option></select></label><label>Qualification<input name="qualification" maxlength="200"></label><label>Experience<input name="experience" maxlength="120" placeholder="e.g. 3 years"></label><label>Location *<input name="location" required maxlength="160"></label><label>Availability<input name="availability" maxlength="160" placeholder="e.g. Immediately / 30 days"></label><label>Additional information<textarea name="message" maxlength="3000"></textarea></label><label class="consent"><input type="checkbox" name="consent" required> I agree that Elara Healthcare may contact me about this application.</label><label style="position:absolute;left:-9999px" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">Submit Application</button><div role="status" aria-live="polite" class="message"></div><span class="hint">Resume upload is not enabled on this website form. The team may request your CV after reviewing your application.</span></form></div></div></section></main><footer><div class="wrap"><strong>ELARA HEALTHCARE LLP</strong><p>Home healthcare with compassion, dignity and respect.</p><p>Indiranagar, Bengaluru, Karnataka, India</p><p><a href="https://wa.me/message/RUPXGM5BZYWVI1" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a> · <a href="mailto:contact.elarahealthcarellp@gmail.com">Email Elara</a></p><small>© 2026 Elara Healthcare LLP</small></div></footer><script>
-(function(){
- const endpoint='https://wkbkxiaedjbjzawnqvpv.supabase.co';
- const publicKey='sb_publishable_qlHAOospC3BFtqPJXeGD8g_KmzR7H8I';
- const form=document.querySelector('[data-elara-form]');
- if(!form)return;
- const message=form.querySelector('[role="status"]');
- const submit=form.querySelector('button[type="submit"]');
- form.addEventListener('submit',async function(event){
-   event.preventDefault();
-   if(!form.reportValidity())return;
-   const data=new FormData(form);
-   const record={};
-   for(const [field,value] of data.entries()){
-     if(field==='consent'||field==='website')continue;
-     record[field]=String(value).trim();
-   }
-   // Honeypot: silently reject automated spam.
-   if(data.get('website'))return;
-   message.className='message';message.textContent='Submitting…';submit.disabled=true;
-   try{
-     const response=await fetch(endpoint+'/rest/v1/'+form.dataset.elaraForm,{
-       method:'POST',
-       headers:{'apikey':publicKey,'Authorization':'Bearer '+publicKey,'Content-Type':'application/json','Prefer':'return=minimal'},
-       body:JSON.stringify(record)
-     });
-     if(!response.ok){
-       const info=await response.text();
-       console.error('Elara form submission failed',response.status,info);
-       throw new Error('The request could not be submitted. Please try again or contact us on WhatsApp.');
-     }
-     form.reset();message.className='message success';message.textContent='Thank you. Your information has been submitted to Elara Healthcare.';
-   }catch(error){
-     message.className='message error';message.textContent=error.message||'Submission failed. Please try again.';
-   }finally{submit.disabled=false;}
- });
-})();
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Careers | Elara Healthcare LLP</title>
+
+<meta name="description" content="Explore career opportunities at Elara Healthcare LLP in Bengaluru. Join our team of compassionate home healthcare professionals.">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+:root {
+  --purple:#593b77;
+  --teal:#147b78;
+  --cream:#faf8f4;
+  --lavender:#f2edf6;
+  --text:#514b55;
+  --border:#e6dbea;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+}
+
+.careers-page {
+  background:var(--cream);
+  min-height:100vh;
+}
+
+/* HERO */
+
+.careers-hero {
+  text-align:center;
+  padding:85px 20px 80px;
+  background:linear-gradient(135deg,#f7f1fb,#eaf8f5);
+}
+
+.eyebrow {
+  color:var(--teal);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.careers-hero h1 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:clamp(36px,5vw,54px);
+  margin:0 0 18px;
+}
+
+.careers-hero h2 {
+  color:var(--teal);
+  font-size:clamp(18px,3vw,23px);
+  margin:0 0 22px;
+  font-weight:600;
+}
+
+.careers-hero p {
+  color:var(--text);
+  font-size:16px;
+  line-height:1.9;
+  max-width:760px;
+  margin:0 auto 28px;
+}
+
+.career-button {
+  display:inline-block;
+  background:var(--purple);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  transition:background .2s;
+}
+
+.career-button:hover {
+  background:var(--teal);
+}
+
+.career-button.teal {
+  background:var(--teal);
+}
+
+.career-button.teal:hover {
+  background:var(--purple);
+}
+
+/* COMMON SECTIONS */
+
+.career-section {
+  max-width:1180px;
+  margin:auto;
+  padding:75px 22px;
+}
+
+.section-heading {
+  text-align:center;
+  margin-bottom:43px;
+}
+
+.section-heading h2 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:clamp(30px,4vw,39px);
+  margin:0 0 15px;
+}
+
+.section-heading p {
+  color:var(--text);
+  font-size:15px;
+  line-height:1.8;
+  max-width:760px;
+  margin:auto;
+}
+
+/* WHY JOIN US */
+
+.benefits-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:25px;
+}
+
+.benefit-card {
+  background:#fff;
+  padding:33px 27px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(69,43,89,.06);
+  text-align:center;
+}
+
+.benefit-icon {
+  width:65px;
+  height:65px;
+  border-radius:18px;
+  margin:0 auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eee7f5;
+  color:var(--purple);
+}
+
+.benefit-icon svg {
+  width:31px;
+  height:31px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.benefit-card h3 {
+  font-family:Georgia,serif;
+  font-size:22px;
+  color:var(--purple);
+  margin:0 0 13px;
+}
+
+.benefit-card p {
+  color:var(--text);
+  font-size:14px;
+  line-height:1.8;
+  margin:0;
+}
+
+/* CAREER AREAS */
+
+.roles-section {
+  background:var(--lavender);
+  padding:75px 22px;
+}
+
+.roles-inner {
+  max-width:1180px;
+  margin:auto;
+}
+
+.roles-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.role-card {
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:28px 24px;
+  box-shadow:0 6px 20px rgba(69,43,89,.04);
+}
+
+.role-card h3 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:21px;
+  margin:0 0 13px;
+}
+
+.role-card p {
+  color:var(--text);
+  font-size:14px;
+  line-height:1.8;
+  margin:0;
+}
+
+/* APPLICATION */
+
+.apply-section {
+  max-width:1050px;
+  margin:auto;
+  padding:80px 22px;
+}
+
+.apply-card {
+  text-align:center;
+  background:linear-gradient(135deg,#f4eef8,#e8f6f3);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:55px 35px;
+}
+
+.apply-card h2 {
+  font-family:Georgia,serif;
+  color:var(--purple);
+  font-size:clamp(30px,4vw,39px);
+  margin:0 0 20px;
+}
+
+.apply-card p {
+  color:var(--text);
+  max-width:710px;
+  margin:0 auto 20px;
+  line-height:1.9;
+}
+
+.apply-actions {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:28px;
+}
+
+.apply-email {
+  display:block;
+  color:var(--teal);
+  font-size:14px;
+  font-weight:600;
+  margin-top:23px;
+  overflow-wrap:anywhere;
+}
+
+/* FINAL MESSAGE */
+
+.final-section {
+  background:#fff;
+  text-align:center;
+  padding:65px 22px;
+}
+
+.final-section h2 {
+  color:var(--purple);
+  font-family:Georgia,serif;
+  font-size:30px;
+  margin:0 0 20px;
+}
+
+.final-section p {
+  color:var(--text);
+  max-width:750px;
+  line-height:1.9;
+  margin:0 auto;
+}
+
+.final-motto {
+  color:var(--teal);
+  font-family:Georgia,serif;
+  font-size:21px;
+  font-style:italic;
+  margin-top:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .benefits-grid,
+  .roles-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px) {
+  .benefits-grid,
+  .roles-grid {
+    grid-template-columns:1fr;
+  }
+
+  .careers-hero {
+    padding:60px 20px;
+  }
+
+  .career-section,
+  .roles-section {
+    padding:50px 18px;
+  }
+
+  .apply-section {
+    padding:55px 18px;
+  }
+
+  .apply-card {
+    padding:38px 22px;
+  }
+
+  .apply-actions {
+    flex-direction:column;
+    align-items:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<nav class="nav">
+
+<a class="brand" href="index.html">
+  ELARA HEALTHCARE
+  <small>LLP · BENGALURU</small>
+</a>
+
+<div class="links">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About Us</a>
+  <a href="leadership.html">Leadership</a>
+  <a class="action" href="request-care.html">Request Care</a>
+  <a class="active" href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+</nav>
+</header>
+
+<main class="careers-page">
+
+<!-- HERO -->
+
+<section class="careers-hero">
+
+  <div class="eyebrow">
+    Build Your Career With Elara
+  </div>
+
+  <h1>Careers at Elara Healthcare</h1>
+
+  <h2>
+    Be Part of a Team That Cares
+  </h2>
+
+  <p>
+    At <strong>Elara Healthcare LLP</strong>,
+    we believe that compassionate healthcare
+    begins with dedicated people.
+    We welcome professionals who share
+    our commitment to dignity, empathy,
+    professionalism, and quality care.
+  </p>
+
+  <a class="career-button" href="#join-our-team">
+    Join Our Team
+  </a>
+
+</section>
+
+<!-- WHY JOIN ELARA -->
+
+<section class="career-section">
+
+  <div class="section-heading">
+    <h2>Why Join Elara?</h2>
+
+    <p>
+      Be part of a healthcare organization
+      focused on making a meaningful difference
+      in the lives of individuals and families.
+    </p>
+  </div>
+
+  <div class="benefits-grid">
+
+    <!-- COMPASSION -->
+
+    <article class="benefit-card">
+
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+        </svg>
+      </div>
+
+      <h3>Compassionate Culture</h3>
+
+      <p>
+        Work in an environment that values
+        kindness, respect, empathy,
+        and patient-centered care.
+      </p>
+
+    </article>
+
+    <!-- PROFESSIONAL DEVELOPMENT -->
+
+    <article class="benefit-card">
+
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 17l6-6 4 4 8-8"/>
+          <path d="M15 7h6v6"/>
+        </svg>
+      </div>
+
+      <h3>Professional Growth</h3>
+
+      <p>
+        Build valuable experience
+        while contributing your knowledge
+        and skills to home healthcare services.
+      </p>
+
+    </article>
+
+    <!-- TEAMWORK -->
+
+    <article class="benefit-card">
+
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="9" cy="8" r="3"/>
+          <path d="M3 20v-2a6 6 0 0 1 12 0v2"/>
+          <path d="M17 5a3 3 0 0 1 0 6"/>
+          <path d="M18 14a5 5 0 0 1 3 5v1"/>
+        </svg>
+      </div>
+
+      <h3>Collaborative Team</h3>
+
+      <p>
+        Work alongside professionals
+        who believe in teamwork,
+        accountability, and shared purpose.
+      </p>
+
+    </article>
+
+  </div>
+</section>
+
+<!-- CAREER AREAS -->
+
+<section class="roles-section">
+
+<div class="roles-inner">
+
+  <div class="section-heading">
+    <h2>Explore Career Opportunities</h2>
+
+    <p>
+      We welcome enquiries from qualified
+      and dedicated professionals interested
+      in supporting our healthcare services.
+      The areas below represent potential
+      career opportunities, subject to availability.
+    </p>
+  </div>
+
+  <div class="roles-grid">
+
+    <article class="role-card">
+      <h3>Nursing Professionals</h3>
+      <p>
+        Qualified nursing professionals
+        interested in providing attentive
+        and compassionate care at home.
+      </p>
+    </article>
+
+    <article class="role-card">
+      <h3>Home Caregivers</h3>
+      <p>
+        Dedicated caregivers supporting
+        daily living activities, comfort,
+        safety, and personal assistance.
+      </p>
+    </article>
+
+    <article class="role-card">
+      <h3>Physiotherapists</h3>
+      <p>
+        Professionals supporting mobility,
+        physical rehabilitation,
+        and functional recovery.
+      </p>
+    </article>
+
+    <article class="role-card">
+      <h3>Elder Care Professionals</h3>
+      <p>
+        Compassionate individuals interested
+        in supporting the dignity,
+        comfort, and well-being of older adults.
+      </p>
+    </article>
+
+    <article class="role-card">
+      <h3>Patient Care Assistants</h3>
+      <p>
+        Professionals assisting with
+        non-clinical daily care needs
+        under appropriate supervision.
+      </p>
+    </article>
+
+    <article class="role-card">
+      <h3>Healthcare Support &amp; Administration</h3>
+      <p>
+        Individuals interested in supporting
+        care coordination, administration,
+        and organizational operations.
+      </p>
+    </article>
+
+  </div>
+
+</div>
+</section>
+
+<!-- JOIN OUR TEAM -->
+
+<section class="apply-section" id="join-our-team">
+
+  <div class="apply-card">
+
+    <h2>Join Our Team</h2>
+
+    <p>
+      Are you passionate about making a difference
+      through compassionate healthcare?
+      We would be pleased to hear from you.
+    </p>
+
+    <p>
+      Share your professional background,
+      relevant qualifications, experience,
+      and the role you are interested in.
+      Our team can review your enquiry
+      when suitable opportunities arise.
+    </p>
+
+    <div class="apply-actions">
+
+      <a
+        class="career-button"
+        href="mailto:contact.elarahealthcarellp@gmail.com?subject=Career%20Enquiry%20-%20Elara%20Healthcare">
+        Apply via Email
+      </a>
+
+      <a
+        class="career-button teal"
+        href="contact.html">
+        Contact Our Team
+      </a>
+
+    </div>
+
+    <a
+      class="apply-email"
+      href="mailto:contact.elarahealthcarellp@gmail.com">
+      contact.elarahealthcarellp@gmail.com
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CLOSING MESSAGE -->
+
+<section class="final-section">
+
+  <h2>Grow With Purpose. Care With Compassion.</h2>
+
+  <p>
+    At Elara Healthcare LLP, every contribution
+    matters. Together, we aim to create
+    a supportive environment where
+    professionalism, empathy, and
+    commitment to quality healthcare
+    guide everything we do.
+  </p>
+
+  <div class="final-motto">
+    Compassion • Trust • Care
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="wrap">
+
+  <strong>ELARA HEALTHCARE LLP</strong>
+
+  <p>
+    Home healthcare with compassion,
+    dignity and respect.
+  </p>
+
+  <p>
+    Indiranagar, Bengaluru,
+    Karnataka, India
+  </p>
+
+  <p>
+    <a href="mailto:contact.elarahealthcarellp@gmail.com">
+      contact.elarahealthcarellp@gmail.com
+    </a>
+  </p>
+
+  <small>© 2026 Elara Healthcare LLP</small>
+
+</div>
+</footer>
+
+</body>
+</html>
