@@ -1,1 +1,38 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Careers | Elara Healthcare LLP</title><meta name="description" content="Elara Healthcare LLP offers compassionate home healthcare services in Bengaluru."><link rel="stylesheet" href="style.css"></head><body><header><nav class="nav"><a class="brand" href="index.html">ELARA HEALTHCARE<small>LLP · BENGALURU</small></a><div class="links"><a class="" href="index.html">Home</a><a class="" href="services.html">Services</a><a class="" href="about.html">About Us</a><a class="" href="leadership.html">Leadership</a><a class="action" href="request-care.html">Request Care</a><a class="active " href="careers.html">Careers</a><a class="" href="contact.html">Contact</a></div></nav></header><main><section class="page-head"><div class="wrap"><div class="eyebrow">JOIN OUR TEAM</div><h1>Build a career in compassionate care</h1><p>Explore opportunities to contribute to home healthcare services.</p></div></section><section class="section"><div class="wrap two"><div><h2>Make a difference through care.</h2><p>We welcome interest from qualified healthcare professionals and caregivers who share our commitment to dignity, compassion and dependable service.</p><p>Open roles and hiring requirements will be shared by the Elara team.</p></div><div class="form-panel"><h3>Join Our Team</h3><div class="notice"><strong>Setup required:</strong> The Google Form or WhatsApp link has not yet been supplied. Replace the placeholder in this page before publishing so visitors can submit enquiries.</div><p>Add your existing Join Our Team Google Form here when its link is available.</p></div></div></section></main><footer><div class="wrap"><strong>ELARA HEALTHCARE LLP</strong><p>Home healthcare with compassion, dignity and respect.</p><p>Indiranagar, Bengaluru, Karnataka, India</p><small>© 2026 Elara Healthcare LLP</small></div></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Careers | Elara Healthcare LLP</title><link rel="stylesheet" href="style.css"><style>.entry-form{display:grid;gap:14px}.entry-form label{font-size:13px;font-weight:700;color:#593b77;display:grid;gap:5px}.entry-form input,.entry-form select,.entry-form textarea{width:100%;padding:12px;border:1px solid #d8d5dd;border-radius:5px;font:inherit;color:#26343b;background:white}.entry-form textarea{min-height:110px;resize:vertical}.entry-form button{background:#593b77;color:white;border:0;border-radius:5px;padding:14px 20px;font-weight:700;cursor:pointer}.entry-form button:disabled{opacity:.65;cursor:wait}.entry-form .message{min-height:24px;font-size:14px}.entry-form .message.error{color:#a32132}.entry-form .message.success{color:#176a4c}.entry-form .hint{font-size:12px;color:#657176}.entry-form .consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;color:#445}.entry-form .consent input{width:auto;margin-top:5px}</style></head><body><header><nav class="nav"><a class="brand" href="index.html">ELARA HEALTHCARE<small>LLP · BENGALURU</small></a><div class="links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="leadership.html">Leadership</a><a href="request-care.html">Request Care</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div></nav></header><main><section class="page-head"><div class="wrap"><div class="eyebrow">JOIN OUR TEAM</div><h1>Build a career in compassionate care</h1><p>Apply to work with Elara Healthcare LLP.</p></div></section><section class="section"><div class="wrap two"><div><h2>Make a difference through care.</h2><p>We welcome healthcare professionals and caregivers committed to compassionate, dependable service.</p><p>Complete the form and our team will review your application.</p></div><div class="form-panel"><h3>Join Our Team</h3><form class="entry-form" data-elara-form="job_applications"><label>Full name *<input name="full_name" autocomplete="name" required maxlength="120"></label><label>Phone number *<input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label><label>Email *<input name="email" type="email" autocomplete="email" required maxlength="180"></label><label>Role interested in *<select name="role" required><option value="">Choose a role</option><option>Registered Nurse</option><option>Caregiver</option><option>Physiotherapist</option><option>Doctor</option><option>Healthcare Coordinator</option><option>Other</option></select></label><label>Qualification<input name="qualification" maxlength="200"></label><label>Experience<input name="experience" maxlength="120" placeholder="e.g. 3 years"></label><label>Location *<input name="location" required maxlength="160"></label><label>Availability<input name="availability" maxlength="160" placeholder="e.g. Immediately / 30 days"></label><label>Additional information<textarea name="message" maxlength="3000"></textarea></label><label class="consent"><input type="checkbox" name="consent" required> I agree that Elara Healthcare may contact me about this application.</label><label style="position:absolute;left:-9999px" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">Submit Application</button><div role="status" aria-live="polite" class="message"></div><span class="hint">Resume upload is not enabled on this website form. The team may request your CV after reviewing your application.</span></form></div></div></section></main><footer><div class="wrap"><strong>ELARA HEALTHCARE LLP</strong><p>Home healthcare with compassion, dignity and respect.</p><p>Indiranagar, Bengaluru, Karnataka, India</p><p><a href="https://wa.me/message/RUPXGM5BZYWVI1" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a> · <a href="mailto:contact.elarahealthcarellp@gmail.com">Email Elara</a></p><small>© 2026 Elara Healthcare LLP</small></div></footer><script>
+(function(){
+ const endpoint='https://wkbkxiaedjbjzawnqvpv.supabase.co';
+ const publicKey='sb_publishable_qlHAOospC3BFtqPJXeGD8g_KmzR7H8I';
+ const form=document.querySelector('[data-elara-form]');
+ if(!form)return;
+ const message=form.querySelector('[role="status"]');
+ const submit=form.querySelector('button[type="submit"]');
+ form.addEventListener('submit',async function(event){
+   event.preventDefault();
+   if(!form.reportValidity())return;
+   const data=new FormData(form);
+   const record={};
+   for(const [field,value] of data.entries()){
+     if(field==='consent'||field==='website')continue;
+     record[field]=String(value).trim();
+   }
+   // Honeypot: silently reject automated spam.
+   if(data.get('website'))return;
+   message.className='message';message.textContent='Submitting…';submit.disabled=true;
+   try{
+     const response=await fetch(endpoint+'/rest/v1/'+form.dataset.elaraForm,{
+       method:'POST',
+       headers:{'apikey':publicKey,'Authorization':'Bearer '+publicKey,'Content-Type':'application/json','Prefer':'return=minimal'},
+       body:JSON.stringify(record)
+     });
+     if(!response.ok){
+       const info=await response.text();
+       console.error('Elara form submission failed',response.status,info);
+       throw new Error('The request could not be submitted. Please try again or contact us on WhatsApp.');
+     }
+     form.reset();message.className='message success';message.textContent='Thank you. Your information has been submitted to Elara Healthcare.';
+   }catch(error){
+     message.className='message error';message.textContent=error.message||'Submission failed. Please try again.';
+   }finally{submit.disabled=false;}
+ });
+})();
+</script></body></html>
