@@ -11,7 +11,10 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="icon" type="image/png" href="supportive%20Home%20C%20Care%20Emblem.png">
+
 <style>
+
 :root {
   --purple: #593b77;
   --teal: #147b78;
@@ -25,6 +28,59 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
+/* HEADER BRANDING */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  color: #593b77;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.brand-text small {
+  display: block;
+  color: #147b78;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.footer-logo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* CONTACT PAGE */
+
 .contact-page {
   background: var(--cream);
   min-height: 100vh;
@@ -32,7 +88,12 @@
 
 /* HERO */
 
-.contact-hero {
+.contact-page .contact-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   background: linear-gradient(135deg, #f6eef9, #eaf8f5);
   text-align: center;
   padding: 75px 22px 70px;
@@ -52,6 +113,7 @@
   font-size: clamp(35px, 5vw, 52px);
   color: var(--purple);
   margin: 0 0 18px;
+  text-align: center;
 }
 
 .contact-hero h2 {
@@ -60,6 +122,7 @@
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 22px;
+  text-align: center;
 }
 
 .contact-hero p {
@@ -68,6 +131,7 @@
   color: var(--text);
   font-size: 16px;
   line-height: 1.9;
+  text-align: center;
 }
 
 /* CONTENT */
@@ -315,9 +379,10 @@
   margin-top: 40px;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media (max-width: 850px) {
+
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -327,7 +392,34 @@
   }
 }
 
+/* RESPONSIVE BRANDING */
+
+@media (max-width: 768px) {
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-text {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+}
+
+/* MOBILE */
+
 @media (max-width: 600px) {
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -336,7 +428,7 @@
     padding: 50px 18px;
   }
 
-  .contact-hero {
+  .contact-page .contact-hero {
     padding: 55px 20px;
   }
 
@@ -352,32 +444,44 @@
     padding: 55px 18px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- HEADER -->
 
 <header>
-<nav class="nav">
 
-<a class="brand" href="index.html">
-  ELARA HEALTHCARE
-  <small>LLP · BENGALURU</small>
-</a>
+  <nav class="nav">
 
-<div class="links">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About Us</a>
-  <a href="leadership.html">Leadership</a>
-  <a class="action" href="request-care.html">Request Care</a>
-  <a href="careers.html">Careers</a>
-  <a class="active" href="contact.html">Contact</a>
-</div>
+    <a class="brand" href="index.html">
 
-</nav>
+      <img
+        src="supportive%20Home%20C%20Care%20Emblem.png"
+        alt="Elara Healthcare LLP Logo"
+        class="brand-logo">
+
+      <span class="brand-text">
+        ELARA HEALTHCARE LLP
+        <small>BENGALURU</small>
+      </span>
+
+    </a>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="leadership.html">Leadership</a>
+      <a class="action" href="request-care.html">Request Care</a>
+      <a href="careers.html">Careers</a>
+      <a class="active" href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+
 </header>
 
 <main class="contact-page">
@@ -427,6 +531,7 @@
 <section class="contact-container">
 
   <div class="contact-heading">
+
     <h2>Contact Information</h2>
 
     <p>
@@ -434,6 +539,7 @@
       or WhatsApp for enquiries about
       our home healthcare services.
     </p>
+
   </div>
 
   <div class="contact-grid">
@@ -443,9 +549,11 @@
     <article class="contact-card">
 
       <div class="contact-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.1 10a16 16 0 0 0 6.9 6.9l1.5-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2z"/>
         </svg>
+
       </div>
 
       <h3>Call Us</h3>
@@ -455,12 +563,20 @@
         your healthcare requirements.
       </p>
 
-      <a class="contact-value" href="tel:+918147461116">
+      <a
+        class="contact-value"
+        href="tel:+918147461116">
+
         +91 8147461116
+
       </a>
 
-      <a class="contact-button" href="tel:+918147461116">
+      <a
+        class="contact-button"
+        href="tel:+918147461116">
+
         Call Now
+
       </a>
 
     </article>
@@ -470,10 +586,12 @@
     <article class="contact-card">
 
       <div class="contact-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <path d="m2 7 10 7 10-7"/>
         </svg>
+
       </div>
 
       <h3>Email Us</h3>
@@ -483,14 +601,20 @@
         or healthcare enquiries.
       </p>
 
-      <a class="contact-value"
-         href="mailto:contact.elarahealthcarellp@gmail.com">
+      <a
+        class="contact-value"
+        href="mailto:contact.elarahealthcarellp@gmail.com">
+
         contact.elarahealthcarellp@gmail.com
+
       </a>
 
-      <a class="contact-button teal"
-         href="mailto:contact.elarahealthcarellp@gmail.com">
+      <a
+        class="contact-button teal"
+        href="mailto:contact.elarahealthcarellp@gmail.com">
+
         Send Email
+
       </a>
 
     </article>
@@ -500,10 +624,12 @@
     <article class="contact-card">
 
       <div class="contact-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/>
           <path d="M9 8c.5 3 2 4.5 5 6l2-1"/>
         </svg>
+
       </div>
 
       <h3>WhatsApp</h3>
@@ -513,18 +639,24 @@
         for service enquiries.
       </p>
 
-      <a class="contact-value"
-         href="https://wa.me/918147461116"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="contact-value"
+        href="https://wa.me/918147461116"
+        target="_blank"
+        rel="noopener noreferrer">
+
         +91 8147461116
+
       </a>
 
-      <a class="contact-button"
-         href="https://wa.me/918147461116?text=Hello%20Elara%20Healthcare%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="contact-button"
+        href="https://wa.me/918147461116?text=Hello%20Elara%20Healthcare%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+        target="_blank"
+        rel="noopener noreferrer">
+
         Chat on WhatsApp
+
       </a>
 
     </article>
@@ -537,55 +669,68 @@
 
 <section class="office-section">
 
-<div class="office-container">
+  <div class="office-container">
 
-  <div class="contact-heading">
-    <h2>Our Office Address</h2>
-    <p>
-      Elara Healthcare LLP is based
-      in Indiranagar, Bengaluru.
-    </p>
-  </div>
+    <div class="contact-heading">
 
-  <div class="office-grid">
+      <h2>Our Office Address</h2>
 
-    <div class="office-card">
-
-      <h2>Visit Our Office</h2>
-
-      <h3>Elara Healthcare LLP</h3>
-
-      <address class="office-address">
-        Aspire Coworks<br>
-        No. 39/7-1, 3rd Floor, 7th Main<br>
-        Opposite Dr. Ambedkar College Ground<br>
-        Appareddy Palya, Indiranagar<br>
-        Bengaluru North – 560038<br>
-        Karnataka, India
-      </address>
-
-      <a
-        class="map-link"
-        href="https://www.google.com/maps/search/?api=1&amp;query=Aspire+Coworks+39%2F7-1+7th+Main+Appareddy+Palya+Indiranagar+Bengaluru+560038"
-        target="_blank"
-        rel="noopener noreferrer">
-        Get Directions
-      </a>
+      <p>
+        Elara Healthcare LLP is based
+        in Indiranagar, Bengaluru.
+      </p>
 
     </div>
 
-    <div class="map-box">
-      <iframe
-        title="Map showing Elara Healthcare LLP office area in Indiranagar, Bengaluru"
-        src="https://maps.google.com/maps?q=Aspire%20Coworks%20Indiranagar%20Bengaluru&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="office-grid">
+
+      <div class="office-card">
+
+        <h2>Visit Our Office</h2>
+
+        <h3>Elara Healthcare LLP</h3>
+
+        <address class="office-address">
+
+          Aspire Coworks<br>
+          No. 39/7-1, 3rd Floor, 7th Main<br>
+          Opposite Dr. Ambedkar College Ground<br>
+          Appareddy Palya, Indiranagar<br>
+          Bengaluru North – 560038<br>
+          Karnataka, India
+
+        </address>
+
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&amp;query=Aspire+Coworks+39%2F7-1+7th+Main+Appareddy+Palya+Indiranagar+Bengaluru+560038"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Get Directions
+
+        </a>
+
+      </div>
+
+      <!-- GOOGLE MAPS -->
+
+      <div class="map-box">
+
+        <iframe
+          title="Map showing Elara Healthcare LLP office area in Indiranagar, Bengaluru"
+          src="https://maps.google.com/maps?q=Aspire%20Coworks%20Indiranagar%20Bengaluru&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+
+        </iframe>
+
+      </div>
+
     </div>
 
   </div>
 
-</div>
 </section>
 
 <!-- FINAL SECTION -->
@@ -603,28 +748,39 @@
   </p>
 
   <p>
+
     <strong>
       Connect with us today and take the
       first step toward compassionate,
       dependable healthcare at home.
     </strong>
+
   </p>
 
   <div class="contact-actions">
 
-    <a class="contact-button" href="request-care.html">
+    <a
+      class="contact-button"
+      href="request-care.html">
+
       Request Care
+
     </a>
 
-    <a class="contact-button teal"
-       href="mailto:contact.elarahealthcarellp@gmail.com">
+    <a
+      class="contact-button teal"
+      href="mailto:contact.elarahealthcarellp@gmail.com">
+
       Contact Our Team
+
     </a>
 
   </div>
 
   <div class="contact-motto">
+
     Compassion • Trust • Care
+
   </div>
 
 </section>
@@ -634,9 +790,17 @@
 <!-- FOOTER -->
 
 <footer>
+
   <div class="wrap">
 
-    <strong>ELARA HEALTHCARE LLP</strong>
+    <img
+      src="supportive%20Home%20C%20Care%20Emblem.png"
+      alt="Elara Healthcare LLP Logo"
+      class="footer-logo">
+
+    <div>
+      <strong>ELARA HEALTHCARE LLP</strong>
+    </div>
 
     <p>
       Home healthcare with compassion,
@@ -649,22 +813,35 @@
     </p>
 
     <p>
+
       Phone:
+
       <a href="tel:+918147461116">
+
         +91 8147461116
+
       </a>
+
     </p>
 
     <p>
+
       Email:
+
       <a href="mailto:contact.elarahealthcarellp@gmail.com">
+
         contact.elarahealthcarellp@gmail.com
+
       </a>
+
     </p>
 
-    <small>© 2026 Elara Healthcare LLP</small>
+    <small>
+      © 2026 Elara Healthcare LLP. All rights reserved.
+    </small>
 
   </div>
+
 </footer>
 
 </body>
