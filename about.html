@@ -12,6 +12,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="icon" type="image/png" href="supportive%20Home%20C%20Care%20Emblem.png">
+
 <style>
 :root {
   --purple: #593b77;
@@ -25,6 +27,55 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 * {
   box-sizing: border-box;
 }
+
+/* HEADER BRANDING */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  color: #593b77;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.brand-text small {
+  display: block;
+  color: #147b78;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.footer-logo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ABOUT PAGE */
 
 .about-page {
   background: var(--cream);
@@ -111,6 +162,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
   margin-bottom: 15px;
 }
 
+/* EXPERIENCE SECTION */
+
 .experience-section {
   background: var(--purple);
   text-align: center;
@@ -140,6 +193,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
   line-height: 1.9;
   font-size: 15px;
 }
+
+/* MISSION AND VISION */
 
 .mission-vision-section {
   background: var(--lavender);
@@ -183,6 +238,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
   line-height: 1.8;
   margin: 0;
 }
+
+/* CORE VALUES */
 
 .values-grid {
   display: grid;
@@ -232,6 +289,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
   margin: 0;
 }
 
+/* COMMITMENT SECTION */
+
 .commitment-section {
   background: linear-gradient(
     135deg,
@@ -270,13 +329,38 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
   outline-offset: 3px;
 }
 
+/* RESPONSIVE DESIGN */
+
 @media (max-width: 800px) {
   .values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+@media (max-width: 768px) {
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-text {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+}
+
 @media (max-width: 600px) {
+
   .mission-vision-grid,
   .values-grid {
     grid-template-columns: 1fr;
@@ -294,30 +378,44 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
     padding: 28px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<nav class="nav">
 
-<a class="brand" href="index.html">
-  ELARA HEALTHCARE
-  <small>LLP · BENGALURU</small>
-</a>
+  <nav class="nav">
 
-<div class="links">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a class="active" href="about.html">About Us</a>
-  <a href="leadership.html">Leadership</a>
-  <a class="action" href="request-care.html">Request Care</a>
-  <a href="careers.html">Careers</a>
-  <a href="contact.html">Contact</a>
-</div>
+    <a class="brand" href="index.html">
 
-</nav>
+      <img
+        src="supportive%20Home%20C%20Care%20Emblem.png"
+        alt="Elara Healthcare LLP Logo"
+        class="brand-logo">
+
+      <span class="brand-text">
+        ELARA HEALTHCARE LLP
+        <small>BENGALURU</small>
+      </span>
+
+    </a>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="about.html">About Us</a>
+      <a href="leadership.html">Leadership</a>
+      <a class="action" href="request-care.html">Request Care</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+
 </header>
 
 <main class="about-page">
@@ -325,7 +423,10 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 <!-- HERO SECTION -->
 
 <section class="about-hero">
-  <div class="eyebrow">Our Story</div>
+
+  <div class="eyebrow">
+    Our Story
+  </div>
 
   <h1>Care Guided by Compassion</h1>
 
@@ -336,103 +437,107 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
     through personalized healthcare services
     in the comfort of their homes.
   </p>
+
 </section>
 
 <!-- WHO WE ARE -->
 
 <section class="about-container">
 
-<div class="about-intro">
+  <div class="about-intro">
 
-  <div class="about-kicker">
-    Get to Know Elara
+    <div class="about-kicker">
+      Get to Know Elara
+    </div>
+
+    <h2 class="about-heading">
+      Who We Are
+    </h2>
+
+    <p>
+      At <strong>Elara Healthcare LLP</strong>,
+      we believe that quality healthcare should
+      be accessible, reliable, personalized,
+      and delivered with compassion.
+    </p>
+
+    <p>
+      Based in <strong>Bengaluru, Karnataka</strong>,
+      Elara Healthcare LLP is a home healthcare
+      organization dedicated to supporting
+      individuals and families through professional,
+      dependable, and patient-centered care
+      delivered in the comfort of their homes.
+    </p>
+
+    <p>
+      Built on <strong>over 20 years of collective
+      healthcare experience</strong>, our foundation
+      brings together professional knowledge
+      in healthcare management, patient support,
+      clinical services, and compassionate caregiving.
+    </p>
+
+    <p>
+      We understand that every patient has
+      unique healthcare requirements.
+      Our approach is centered on understanding
+      individual needs and providing care
+      that respects personal dignity,
+      comfort, independence, and well-being.
+    </p>
+
+    <p>
+      Our comprehensive range of services includes
+      <strong>doctor home visits, nursing care at home,
+      elder care, physiotherapy, rehabilitation,
+      mother and baby care, medical equipment support,
+      palliative care, critical care nursing,
+      and ICU home setup.</strong>
+    </p>
+
+    <p>
+      We aim to support individuals recovering
+      from illness or surgery, older adults
+      requiring everyday assistance, patients
+      managing ongoing medical conditions,
+      and families seeking dependable
+      professional care for their loved ones.
+    </p>
+
+    <h3 class="about-subheading">
+      Our Approach to Healthcare
+    </h3>
+
+    <p>
+      We believe healthcare goes beyond
+      medical treatment. It is about understanding
+      patients, communicating with families,
+      creating a supportive environment,
+      and helping individuals feel safe,
+      respected, and cared for.
+    </p>
+
+    <p>
+      At Elara Healthcare LLP, we strive
+      to combine professional healthcare
+      expertise with empathy, responsibility,
+      and personalized attention.
+    </p>
+
+    <p>
+      Our goal is to make home healthcare
+      more convenient and reassuring
+      for both patients and their families,
+      while supporting recovery,
+      independence, and quality of life.
+    </p>
+
   </div>
 
-  <h2 class="about-heading">Who We Are</h2>
-
-  <p>
-    At <strong>Elara Healthcare LLP</strong>,
-    we believe that quality healthcare should
-    be accessible, reliable, personalized,
-    and delivered with compassion.
-  </p>
-
-  <p>
-    Based in <strong>Bengaluru, Karnataka</strong>,
-    Elara Healthcare LLP is a home healthcare
-    organization dedicated to supporting
-    individuals and families through professional,
-    dependable, and patient-centered care
-    delivered in the comfort of their homes.
-  </p>
-
-  <p>
-    Built on <strong>over 20 years of collective
-    healthcare experience</strong>, our foundation
-    brings together professional knowledge
-    in healthcare management, patient support,
-    clinical services, and compassionate caregiving.
-  </p>
-
-  <p>
-    We understand that every patient has
-    unique healthcare requirements.
-    Our approach is centered on understanding
-    individual needs and providing care
-    that respects personal dignity,
-    comfort, independence, and well-being.
-  </p>
-
-  <p>
-    Our comprehensive range of services includes
-    <strong>doctor home visits, nursing care at home,
-    elder care, physiotherapy, rehabilitation,
-    mother and baby care, medical equipment support,
-    palliative care, critical care nursing,
-    and ICU home setup.</strong>
-  </p>
-
-  <p>
-    We aim to support individuals recovering
-    from illness or surgery, older adults
-    requiring everyday assistance, patients
-    managing ongoing medical conditions,
-    and families seeking dependable
-    professional care for their loved ones.
-  </p>
-
-  <h3 class="about-subheading">
-    Our Approach to Healthcare
-  </h3>
-
-  <p>
-    We believe healthcare goes beyond
-    medical treatment. It is about understanding
-    patients, communicating with families,
-    creating a supportive environment,
-    and helping individuals feel safe,
-    respected, and cared for.
-  </p>
-
-  <p>
-    At Elara Healthcare LLP, we strive
-    to combine professional healthcare
-    expertise with empathy, responsibility,
-    and personalized attention.
-  </p>
-
-  <p>
-    Our goal is to make home healthcare
-    more convenient and reassuring
-    for both patients and their families,
-    while supporting recovery,
-    independence, and quality of life.
-  </p>
-
-</div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE SECTION -->
 
 <section class="experience-section">
 
@@ -440,7 +545,9 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
     20+
   </div>
 
-  <h2>Years of Collective Healthcare Experience</h2>
+  <h2>
+    Years of Collective Healthcare Experience
+  </h2>
 
   <p>
     Two decades of healthcare expertise
@@ -457,54 +564,57 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
 <section class="mission-vision-section">
 
-<div class="about-container">
+  <div class="about-container">
 
-  <div class="section-heading">
-    <h2 class="about-heading">
-      Our Mission &amp; Vision
-    </h2>
+    <div class="section-heading">
 
-    <p>
-      The purpose and aspirations guiding
-      our healthcare journey.
-    </p>
-  </div>
-
-  <div class="mission-vision-grid">
-
-    <article class="about-card">
-
-      <h3>Our Mission</h3>
+      <h2 class="about-heading">
+        Our Mission &amp; Vision
+      </h2>
 
       <p>
-        To provide compassionate,
-        reliable, and personalized
-        home healthcare that promotes
-        patient comfort, dignity,
-        safety, independence,
-        and overall well-being.
+        The purpose and aspirations guiding
+        our healthcare journey.
       </p>
 
-    </article>
+    </div>
 
-    <article class="about-card">
+    <div class="mission-vision-grid">
 
-      <h3>Our Vision</h3>
+      <article class="about-card">
 
-      <p>
-        To become a trusted home healthcare
-        provider recognized for quality care,
-        professionalism, innovation,
-        and a lasting commitment
-        to improving the lives
-        of individuals and families.
-      </p>
+        <h3>Our Mission</h3>
 
-    </article>
+        <p>
+          To provide compassionate,
+          reliable, and personalized
+          home healthcare that promotes
+          patient comfort, dignity,
+          safety, independence,
+          and overall well-being.
+        </p>
+
+      </article>
+
+      <article class="about-card">
+
+        <h3>Our Vision</h3>
+
+        <p>
+          To become a trusted home healthcare
+          provider recognized for quality care,
+          professionalism, innovation,
+          and a lasting commitment
+          to improving the lives
+          of individuals and families.
+        </p>
+
+      </article>
+
+    </div>
 
   </div>
 
-</div>
 </section>
 
 <!-- CORE VALUES -->
@@ -526,6 +636,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
   <div class="values-grid">
 
+    <!-- COMPASSION -->
+
     <article class="value-card">
 
       <div class="value-icon">♥</div>
@@ -539,6 +651,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
       </p>
 
     </article>
+
+    <!-- TRUST -->
 
     <article class="value-card">
 
@@ -554,6 +668,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
     </article>
 
+    <!-- CARE -->
+
     <article class="value-card">
 
       <div class="value-icon">+</div>
@@ -568,6 +684,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
     </article>
 
+    <!-- INTEGRITY -->
+
     <article class="value-card">
 
       <div class="value-icon">◆</div>
@@ -581,6 +699,8 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
       </p>
 
     </article>
+
+    <!-- EXCELLENCE -->
 
     <article class="value-card">
 
@@ -601,63 +721,80 @@ content="Discover Elara Healthcare LLP, our collective healthcare experience, mi
 
 </section>
 
-<!-- COMMITMENT -->
+<!-- COMMITMENT SECTION -->
 
 <section class="commitment-section">
 
-<div class="about-container">
+  <div class="about-container">
 
-  <div class="about-kicker">
-    Our Promise
+    <div class="about-kicker">
+      Our Promise
+    </div>
+
+    <h2 class="about-heading">
+      Our Commitment to You
+    </h2>
+
+    <p>
+      At Elara Healthcare LLP, our commitment
+      is to deliver compassionate, dependable,
+      and personalized home healthcare
+      while protecting patient dignity,
+      encouraging independence,
+      and providing reassurance
+      and peace of mind to families.
+    </p>
+
+    <p>
+      We strive to create a healthcare
+      experience built on compassion,
+      trust, integrity, and respect,
+      because every individual deserves
+      to feel valued, supported,
+      and cared for.
+    </p>
+
+    <a href="leadership.html" class="about-btn">
+      Meet Our Leadership
+    </a>
+
   </div>
 
-  <h2 class="about-heading">
-    Our Commitment to You
-  </h2>
-
-  <p>
-    At Elara Healthcare LLP, our commitment
-    is to deliver compassionate, dependable,
-    and personalized home healthcare
-    while protecting patient dignity,
-    encouraging independence,
-    and providing reassurance
-    and peace of mind to families.
-  </p>
-
-  <p>
-    We strive to create a healthcare
-    experience built on compassion,
-    trust, integrity, and respect,
-    because every individual deserves
-    to feel valued, supported,
-    and cared for.
-  </p>
-
-  <a href="leadership.html" class="about-btn">
-    Meet Our Leadership
-  </a>
-
-</div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
+
   <div class="wrap">
-    <strong>ELARA HEALTHCARE LLP</strong>
+
+    <img
+      src="supportive%20Home%20C%20Care%20Emblem.png"
+      alt="Elara Healthcare LLP Logo"
+      class="footer-logo">
+
+    <div>
+      <strong>ELARA HEALTHCARE LLP</strong>
+    </div>
+
     <p>
       Home healthcare with compassion,
       dignity and respect.
     </p>
+
     <p>
       Indiranagar, Bengaluru,
       Karnataka, India
     </p>
+
     <small>
-      © 2026 Elara Healthcare LLP
+      © 2026 Elara Healthcare LLP. All rights reserved.
     </small>
+
   </div>
+
 </footer>
 
 </body>
