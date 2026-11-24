@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,7 +13,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="icon" type="image/png" href="supportive%20Home%20Care%20Emblem.png">
+<link rel="icon" type="image/png" href="Supportive%20Home%20Care%20Emblem.png">
 
 <style>
 
@@ -63,6 +64,29 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   box-shadow: none;
 }
 
+@media (max-width: 768px) {
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-text {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+}
+
 /* LEADERSHIP PAGE */
 
 .leadership-page {
@@ -85,18 +109,22 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   box-sizing: border-box;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .leadership-page .leadership-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   width: 100%;
   min-height: 310px;
+
   padding: 65px 20px;
   margin: 0;
+
   text-align: center;
+
   background: linear-gradient(
     135deg,
     #f7f1fb,
@@ -118,13 +146,17 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: block;
   width: 100%;
   max-width: 850px;
+
   font-family: Georgia, serif;
   font-size: clamp(36px, 5vw, 54px);
   line-height: 1.2;
   font-weight: 600;
+
   color: var(--lp-purple);
+
   margin: 0 auto 20px;
   padding: 0;
+
   text-align: center;
 }
 
@@ -132,11 +164,14 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: block;
   width: 100%;
   max-width: 690px;
+
   color: var(--lp-text);
   font-size: 16px;
   line-height: 1.85;
+
   margin: 0 auto;
   padding: 0;
+
   text-align: center;
 }
 
@@ -146,6 +181,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: block;
   width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
   padding: 65px 22px;
 }
@@ -155,19 +191,24 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   width: 100%;
   text-align: center;
+
   margin: 0 auto 42px;
 }
 
 .leadership-page .leadership-section-heading h2 {
   display: block;
   width: 100%;
+
   color: var(--lp-purple);
   font-family: Georgia, serif;
   font-size: clamp(30px, 4vw, 39px);
   line-height: 1.3;
+
   text-align: center;
+
   margin: 0 0 13px;
   padding: 0;
 }
@@ -176,9 +217,12 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: block;
   width: 100%;
   max-width: 720px;
+
   font-size: 15px;
   line-height: 1.8;
+
   text-align: center;
+
   margin: 0 auto;
   padding: 0;
 }
@@ -189,9 +233,11 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+
   width: 100%;
   margin: 0;
   padding: 0;
+
   align-items: stretch;
 }
 
@@ -200,12 +246,16 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 .leadership-page .leadership-card {
   display: flex;
   flex-direction: column;
+
   min-width: 0;
+
   background: #ffffff;
   border: 1px solid var(--lp-border);
   border-radius: 18px;
   overflow: hidden;
+
   box-shadow: 0 8px 25px rgba(69, 43, 89, 0.07);
+
   transition: transform 0.2s ease,
               box-shadow 0.2s ease;
 }
@@ -215,7 +265,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   box-shadow: 0 13px 30px rgba(69, 43, 89, 0.12);
 }
 
-/* PROFILE PHOTOGRAPHS */
+/* PROFILE PHOTOS */
 
 .leadership-page .leadership-photo {
   display: block;
@@ -244,6 +294,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   display: flex;
   flex-direction: column;
   flex: 1;
+
   padding: 25px 23px 27px;
 }
 
@@ -252,6 +303,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   font-family: Georgia, serif;
   font-size: 23px;
   line-height: 1.3;
+
   margin: 0 0 10px;
 }
 
@@ -262,6 +314,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   letter-spacing: 1px;
   line-height: 1.6;
   text-transform: uppercase;
+
   margin: 0 0 18px;
 }
 
@@ -269,6 +322,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   color: var(--lp-text);
   font-size: 14px;
   line-height: 1.85;
+
   margin: 0 0 20px;
 }
 
@@ -284,12 +338,16 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 .leadership-page .leadership-details summary {
   display: inline-block;
   list-style: none;
+
   background: var(--lp-purple);
   color: white;
+
   padding: 11px 23px;
   border-radius: 25px;
+
   font-size: 13px;
   font-weight: 600;
+
   cursor: pointer;
 }
 
@@ -339,29 +397,36 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   grid-template-columns: repeat(2, minmax(0, 380px));
   gap: 28px;
   justify-content: center;
+
   width: 100%;
 }
 
 .leadership-page .leadership-advisor-tag {
   display: inline-block;
   align-self: flex-start;
+
   color: var(--lp-teal);
   background: #e8f5f2;
+
   padding: 7px 12px;
   border-radius: 20px;
+
   font-size: 11px;
   font-weight: 700;
+
   margin-bottom: 15px;
 }
 
-/* BOTTOM CONTACT SECTION */
+/* CONTACT SECTION */
 
 .leadership-page .leadership-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 100%;
   text-align: center;
+
   padding: 65px 22px;
 }
 
@@ -370,6 +435,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   font-family: Georgia, serif;
   font-size: clamp(28px, 4vw, 38px);
   text-align: center;
+
   margin: 0 0 17px;
 }
 
@@ -377,15 +443,19 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
   max-width: 670px;
   line-height: 1.85;
   text-align: center;
+
   margin: 0 auto 26px;
 }
 
 .leadership-page .leadership-contact-button {
   display: inline-block;
+
   background: var(--lp-teal);
   color: white;
+
   padding: 14px 28px;
   border-radius: 30px;
+
   text-decoration: none;
   font-weight: 600;
 }
@@ -404,30 +474,6 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
   .leadership-page .leadership-advisor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* RESPONSIVE BRANDING */
-
-@media (max-width: 768px) {
-
-  .brand-logo {
-    width: 45px;
-    height: 45px;
-  }
-
-  .brand-text {
-    font-size: 12px;
-    letter-spacing: 0.8px;
-  }
-
-  .brand-text small {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .brand {
-    gap: 8px;
   }
 }
 
@@ -468,6 +514,7 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 }
 
 </style>
+
 </head>
 
 <body>
@@ -476,33 +523,41 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <header>
 
-  <nav class="nav">
+<nav class="nav">
 
-    <a class="brand" href="index.html">
+<a class="brand" href="index.html">
 
-      <img
-        src="supportive%20Home%20Care%20Emblem.png"
-        alt="Elara Healthcare LLP Logo"
-        class="brand-logo">
+<img
+src="Supportive%20Home%20Care%20Emblem.png"
+alt="Elara Healthcare LLP Logo"
+class="brand-logo">
 
-      <span class="brand-text">
-        ELARA HEALTHCARE LLP
-        <small>BENGALURU</small>
-      </span>
+<span class="brand-text">
+ELARA HEALTHCARE LLP
+<small>BENGALURU</small>
+</span>
 
-    </a>
+</a>
 
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a class="active" href="leadership.html">Leadership</a>
-      <a class="action" href="request-care.html">Request Care</a>
-      <a href="careers.html">Careers</a>
-      <a href="contact.html">Contact</a>
-    </div>
+<div class="links">
 
-  </nav>
+<a href="index.html">Home</a>
+
+<a href="services.html">Services</a>
+
+<a href="about.html">About Us</a>
+
+<a class="active" href="leadership.html">Leadership</a>
+
+<a class="action" href="request-care.html">Request Care</a>
+
+<a href="careers.html">Careers</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
 
 </header>
 
@@ -512,17 +567,17 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <section class="leadership-hero">
 
-  <div class="leadership-eyebrow">
-    THE PEOPLE BEHIND ELARA
-  </div>
+<div class="leadership-eyebrow">
+THE PEOPLE BEHIND ELARA
+</div>
 
-  <h1>Meet Our Leadership</h1>
+<h1>Meet Our Leadership</h1>
 
-  <p>
-    Guided by experience, strengthened by compassion,
-    and united by a commitment to delivering
-    dependable, dignified healthcare.
-  </p>
+<p>
+Guided by experience, strengthened by compassion,
+and united by a commitment to delivering
+dependable, dignified healthcare.
+</p>
 
 </section>
 
@@ -530,305 +585,383 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <section class="leadership-section">
 
-  <div class="leadership-section-heading">
+<div class="leadership-section-heading">
 
-    <h2>Our Leadership Team</h2>
+<h2>Our Leadership Team</h2>
 
-    <p>
-      Dedicated professionals shaping the future
-      of Elara Healthcare LLP.
-    </p>
+<p>
+Dedicated professionals shaping the future
+of Elara Healthcare LLP.
+</p>
 
-  </div>
+</div>
 
-  <div class="leadership-team-grid">
+<div class="leadership-team-grid">
 
-    <!-- DR. D. N. ANAND -->
+<!-- DR ANAND -->
 
-    <article class="leadership-card">
+<article class="leadership-card">
 
-      <div class="leadership-photo">
-        <img
-          src="Anand.jpg"
-          alt="Dr. D. N. Anand"
-          loading="lazy">
-      </div>
+<div class="leadership-photo">
 
-      <div class="leadership-info">
+<img
+src="Anand.jpg"
+alt="Dr. D. N. Anand"
+loading="lazy">
 
-        <h3>Dr. D. N. Anand</h3>
+</div>
 
-        <div class="leadership-role">
-          Managing Director
-        </div>
+<div class="leadership-info">
 
-        <p class="leadership-intro">
-          Healthcare business leader with over 24 years
-          of experience in strategic growth, partnerships,
-          and international market development.
-        </p>
+<h3>Dr. D. N. Anand</h3>
 
-        <details class="leadership-details">
+<div class="leadership-role">
+Managing Director
+</div>
 
-          <summary>Learn More</summary>
+<p class="leadership-intro">
+Healthcare business leader with over 24 years
+of experience in strategic growth, partnerships,
+and international market development.
+</p>
 
-          <div class="leadership-bio">
+<details class="leadership-details">
 
-            <p>
-              Dr. D. N. Anand brings more than 24 years
-              of experience in healthcare business development,
-              strategic leadership, and international market expansion.
-            </p>
+<summary>Learn More</summary>
 
-            <ul>
-              <li>Experience across MedTech, medical consumables, home healthcare, and elder care.</li>
+<div class="leadership-bio">
 
-              <li>Supported healthcare expansion across India, Sri Lanka, Bangladesh, and Nepal.</li>
+<p>
+Dr. D. N. Anand brings more than 24 years
+of experience in healthcare business development,
+strategic leadership, and international market expansion.
+</p>
 
-              <li>Recognized for contributions to healthcare.</li>
+<ul>
 
-              <li>Recipient of the Dr. B. R. Ambedkar Award for Healthcare Excellence.</li>
+<li>
+Experience across MedTech, medical consumables,
+home healthcare, and elder care.
+</li>
 
-              <li>Experience in international strategic partnerships.</li>
+<li>
+Supported healthcare expansion across India,
+Sri Lanka, Bangladesh, and Nepal.
+</li>
 
-              <li>Associated with Rotary and humanitarian initiatives.</li>
-            </ul>
+<li>
+Recognized for contributions to healthcare.
+</li>
 
-          </div>
+<li>
+Recipient of the Dr. B. R. Ambedkar Award
+for Healthcare Excellence.
+</li>
 
-        </details>
+<li>
+Experience in international strategic partnerships.
+</li>
 
-      </div>
+<li>
+Associated with Rotary and humanitarian initiatives.
+</li>
 
-    </article>
+</ul>
 
-    <!-- DR. AMUTHA MARY M -->
+</div>
 
-    <article class="leadership-card">
+</details>
 
-      <div class="leadership-photo">
-        <img
-          src="Amutha Mary.jpg"
-          alt="Dr. Amutha Mary M"
-          loading="lazy">
-      </div>
+</div>
 
-      <div class="leadership-info">
+</article>
 
-        <h3>Dr. Amutha Mary M</h3>
+<!-- DR AMUTHA -->
 
-        <div class="leadership-role">
-          Director
-        </div>
+<article class="leadership-card">
 
-        <p class="leadership-intro">
-          Healthcare professional with over 25 years
-          of experience in hospital administration,
-          healthcare management, and community service.
-        </p>
+<div class="leadership-photo">
 
-        <details class="leadership-details">
+<img
+src="Amutha%20Mary.jpg"
+alt="Dr. Amutha Mary M"
+loading="lazy">
 
-          <summary>Learn More</summary>
+</div>
 
-          <div class="leadership-bio">
+<div class="leadership-info">
 
-            <p>
-              <strong>Qualifications:</strong>
-              RN, DHA, MBA, PH
-            </p>
+<h3>Dr. Amutha Mary M</h3>
 
-            <p>
-              Dr. Amutha Mary M has extensive experience
-              in healthcare administration, corporate management,
-              strategic planning, and healthcare development.
-            </p>
+<div class="leadership-role">
+Director
+</div>
 
-            <ul>
-              <li>Former Operations Manager in corporate healthcare organizations.</li>
+<p class="leadership-intro">
+Healthcare professional with over 25 years
+of experience in hospital administration,
+healthcare management, and community service.
+</p>
 
-              <li>Experience in quality management, marketing, and business alliances.</li>
+<details class="leadership-details">
 
-              <li>Recipient of a Women Empowerment Award from the Tamil Nadu Government.</li>
+<summary>Learn More</summary>
 
-              <li>Recognized by Global Human Peace University, Delaware, USA.</li>
+<div class="leadership-bio">
 
-              <li>District Reporter, Indian Press Union, Karnataka.</li>
+<p>
+<strong>Qualifications:</strong>
+RN, DHA, MBA, PH
+</p>
 
-              <li>Contributed to pandemic welfare, disaster relief, and community service.</li>
-            </ul>
+<p>
+Dr. Amutha Mary M has extensive experience
+in healthcare administration, corporate management,
+strategic planning, and healthcare development.
+</p>
 
-          </div>
+<ul>
 
-        </details>
+<li>
+Former Operations Manager in corporate
+healthcare organizations.
+</li>
 
-      </div>
+<li>
+Experience in quality management, marketing,
+and business alliances.
+</li>
 
-    </article>
+<li>
+Recipient of a Women Empowerment Award
+from the Tamil Nadu Government.
+</li>
 
-    <!-- MR. ANTONY YESUDOSS P -->
+<li>
+Recognized by Global Human Peace University,
+Delaware, USA.
+</li>
 
-    <article class="leadership-card">
+<li>
+District Reporter, Indian Press Union, Karnataka.
+</li>
 
-      <div class="leadership-photo">
-        <img
-          class="photo-contain"
-          src="Antony yesudas.jpg"
-          alt="Mr. Antony Yesudoss P"
-          loading="lazy">
-      </div>
+<li>
+Contributed to pandemic welfare, disaster relief,
+and community service.
+</li>
 
-      <div class="leadership-info">
+</ul>
 
-        <h3>Mr. Antony Yesudoss P</h3>
+</div>
 
-        <div class="leadership-role">
-          Director
-        </div>
+</details>
 
-        <p class="leadership-intro">
-          Supporting Elara Healthcare LLP's leadership
-          and its commitment to dependable,
-          high-quality healthcare services.
-        </p>
+</div>
 
-        <details class="leadership-details">
+</article>
 
-          <summary>Learn More</summary>
+<!-- MR ANTONY -->
 
-          <div class="leadership-bio">
+<article class="leadership-card">
 
-            <p>
-              Detailed professional biography will be added soon.
-            </p>
+<div class="leadership-photo">
 
-          </div>
+<img
+class="photo-contain"
+src="Antony%20yesudas.jpg"
+alt="Mr. Antony Yesudoss P"
+loading="lazy">
 
-        </details>
+</div>
 
-      </div>
+<div class="leadership-info">
 
-    </article>
+<h3>Mr. Antony Yesudoss P</h3>
 
-    <!-- GODLIVE JYOTHI -->
+<div class="leadership-role">
+Director
+</div>
 
-    <article class="leadership-card">
+<p class="leadership-intro">
+Supporting Elara Healthcare LLP's leadership
+and its commitment to dependable,
+high-quality healthcare services.
+</p>
 
-      <div class="leadership-photo">
-        <img
-          src="Godlive.jpg"
-          alt="Godlive Jyothi"
-          loading="lazy">
-      </div>
+<details class="leadership-details">
 
-      <div class="leadership-info">
+<summary>Learn More</summary>
 
-        <h3>Godlive Jyothi</h3>
+<div class="leadership-bio">
 
-        <div class="leadership-role">
-          Digital Operations &amp; Analytics Manager
-        </div>
+<p>
+Detailed professional biography will be added soon.
+</p>
 
-        <p class="leadership-intro">
-          Supporting strategic digital initiatives,
-          operational efficiency, and data-driven
-          decision-making to strengthen organizational performance.
-        </p>
+</div>
 
-        <details class="leadership-details">
+</details>
 
-          <summary>Learn More</summary>
+</div>
 
-          <div class="leadership-bio">
+</article>
 
-            <p>
-              Godlive Jyothi contributes to Elara Healthcare LLP's
-              digital operations and organizational development,
-              aligning technology and analytics with business objectives.
-            </p>
+<!-- GODLIVE JYOTHI -->
 
-            <ul>
-              <li>Digital strategy and operational planning.</li>
+<article class="leadership-card">
 
-              <li>Data analytics, performance reporting, and business insights.</li>
+<div class="leadership-photo">
 
-              <li>Technology coordination and digital process improvement.</li>
+<img
+src="Godlive.jpg"
+alt="Godlive Jyothi"
+loading="lazy">
 
-              <li>Operational workflow optimization and efficiency.</li>
+</div>
 
-              <li>Supporting informed decision-making and organizational growth.</li>
-            </ul>
+<div class="leadership-info">
 
-          </div>
+<h3>Godlive Jyothi</h3>
 
-        </details>
+<div class="leadership-role">
+Digital Operations &amp; Analytics Manager
+</div>
 
-      </div>
+<p class="leadership-intro">
+Supporting strategic digital initiatives,
+operational efficiency, and data-driven
+decision-making to strengthen organizational performance.
+</p>
 
-    </article>
+<details class="leadership-details">
 
-    <!-- LONA SABATINI -->
+<summary>Learn More</summary>
 
-    <article class="leadership-card">
+<div class="leadership-bio">
 
-      <div class="leadership-photo">
-        <img
-          src="Lona sabatini.JPG"
-          alt="Lona Sabatini"
-          loading="lazy">
-      </div>
+<p>
+Godlive Jyothi contributes to Elara Healthcare LLP's
+digital operations and organizational development,
+aligning technology and analytics with business objectives.
+</p>
 
-      <div class="leadership-info">
+<ul>
 
-        <h3>Lona Sabatini</h3>
+<li>
+Digital strategy and operational planning.
+</li>
 
-        <div class="leadership-role">
-          Accounts Manager
-        </div>
+<li>
+Data analytics, performance reporting,
+and business insights.
+</li>
 
-        <p class="leadership-intro">
-          Supporting financial operations,
-          accounts administration, and responsible
-          financial coordination within Elara Healthcare LLP.
-        </p>
+<li>
+Technology coordination and digital process improvement.
+</li>
 
-        <details class="leadership-details">
+<li>
+Operational workflow optimization and efficiency.
+</li>
 
-          <summary>Learn More</summary>
+<li>
+Supporting informed decision-making
+and organizational growth.
+</li>
 
-          <div class="leadership-bio">
+</ul>
 
-            <p>
-              As Accounts Manager, Lona Sabatini supports
-              financial administration, accurate documentation,
-              and the coordination of accounting activities.
-            </p>
+</div>
 
-            <ul>
-              <li>Managing day-to-day accounting operations and financial records.</li>
+</details>
 
-              <li>Coordinating invoices, billing, and payment processing.</li>
+</div>
 
-              <li>Monitoring accounts payable and receivable.</li>
+</article>
 
-              <li>Supporting budgeting, expense tracking, and financial planning.</li>
+<!-- LONA SABATINI -->
 
-              <li>Preparing financial reports and documentation.</li>
+<article class="leadership-card">
 
-              <li>Assisting with account reconciliations.</li>
+<div class="leadership-photo">
 
-              <li>Supporting compliance with accounting procedures.</li>
-            </ul>
+<img
+src="Lona%20sabatini.JPG"
+alt="Lona Sabatini"
+loading="lazy">
 
-          </div>
+</div>
 
-        </details>
+<div class="leadership-info">
 
-      </div>
+<h3>Lona Sabatini</h3>
 
-    </article>
+<div class="leadership-role">
+Accounts Manager
+</div>
 
-  </div>
+<p class="leadership-intro">
+Supporting financial operations,
+accounts administration, and responsible
+financial coordination within Elara Healthcare LLP.
+</p>
+
+<details class="leadership-details">
+
+<summary>Learn More</summary>
+
+<div class="leadership-bio">
+
+<p>
+As Accounts Manager, Lona Sabatini supports
+financial administration, accurate documentation,
+and the coordination of accounting activities.
+</p>
+
+<ul>
+
+<li>
+Managing day-to-day accounting operations
+and financial records.
+</li>
+
+<li>
+Coordinating invoices, billing, and payment processing.
+</li>
+
+<li>
+Monitoring accounts payable and receivable.
+</li>
+
+<li>
+Supporting budgeting, expense tracking,
+and financial planning.
+</li>
+
+<li>
+Preparing financial reports and documentation.
+</li>
+
+<li>
+Assisting with account reconciliations.
+</li>
+
+<li>
+Supporting compliance with accounting procedures.
+</li>
+
+</ul>
+
+</div>
+
+</details>
+
+</div>
+
+</article>
+
+</div>
 
 </section>
 
@@ -836,130 +969,147 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <section class="leadership-advisors">
 
-  <div class="leadership-section">
+<div class="leadership-section">
 
-    <div class="leadership-section-heading">
+<div class="leadership-section-heading">
 
-      <h2>Our Advisors</h2>
+<h2>Our Advisors</h2>
 
-      <p>
-        Experienced professionals providing guidance,
-        knowledge, and valuable perspectives.
-      </p>
+<p>
+Experienced professionals providing guidance,
+knowledge, and valuable perspectives.
+</p>
 
-    </div>
+</div>
 
-    <div class="leadership-advisor-grid">
+<div class="leadership-advisor-grid">
 
-      <!-- DR. APPACHE GOWDA -->
+<!-- DR APPACHE GOWDA -->
 
-      <article class="leadership-card">
+<article class="leadership-card">
 
-        <div class="leadership-photo">
-          <img
-            src="Apache.JPG"
-            alt="Dr. Appache Gowda"
-            loading="lazy">
-        </div>
+<div class="leadership-photo">
 
-        <div class="leadership-info">
+<img
+src="Apache.JPG"
+alt="Dr. Appache Gowda"
+loading="lazy">
 
-          <span class="leadership-advisor-tag">
-            ADVISORY TEAM
-          </span>
+</div>
 
-          <h3>Dr. Appache Gowda</h3>
+<div class="leadership-info">
 
-          <div class="leadership-role">
-            Senior Medical Advisor
-          </div>
+<span class="leadership-advisor-tag">
+ADVISORY TEAM
+</span>
 
-          <p class="leadership-intro">
-            Serving as Senior Medical Advisor
-            to Elara Healthcare LLP.
-          </p>
+<h3>Dr. Appache Gowda</h3>
 
-          <details class="leadership-details">
+<div class="leadership-role">
+Senior Medical Advisor
+</div>
 
-            <summary>Learn More</summary>
+<p class="leadership-intro">
+Serving as Senior Medical Advisor
+to Elara Healthcare LLP.
+</p>
 
-            <div class="leadership-bio">
+<details class="leadership-details">
 
-              <p>
-                Detailed professional biography will be added soon.
-              </p>
+<summary>Learn More</summary>
 
-            </div>
+<div class="leadership-bio">
 
-          </details>
+<p>
+Detailed professional biography will be added soon.
+</p>
 
-        </div>
+</div>
 
-      </article>
+</details>
 
-      <!-- LT COL DIVAKARA NAIDU -->
+</div>
 
-      <article class="leadership-card">
+</article>
 
-        <div class="leadership-photo">
-          <img
-            src="Diwakar.jpg"
-            alt="Lt Col Divakara Naidu"
-            loading="lazy">
-        </div>
+<!-- LT COL DIVAKARA NAIDU -->
 
-        <div class="leadership-info">
+<article class="leadership-card">
 
-          <span class="leadership-advisor-tag">
-            ADVISORY TEAM
-          </span>
+<div class="leadership-photo">
 
-          <h3>Lt Col Divakara Naidu</h3>
+<img
+src="Diwakar.jpg"
+alt="Lt Col Divakara Naidu"
+loading="lazy">
 
-          <div class="leadership-role">
-            Advisor
-          </div>
+</div>
 
-          <p class="leadership-intro">
-            Soldier, leader, mentor, and humanitarian,
-            guided by service, honour, discipline,
-            compassion, and commitment.
-          </p>
+<div class="leadership-info">
 
-          <details class="leadership-details">
+<span class="leadership-advisor-tag">
+ADVISORY TEAM
+</span>
 
-            <summary>Learn More</summary>
+<h3>Lt Col Divakara Naidu</h3>
 
-            <div class="leadership-bio">
+<div class="leadership-role">
+Advisor
+</div>
 
-              <p>
-                Lt Col Divakara Naidu brings a leadership
-                philosophy rooted in service, honour, and commitment.
-              </p>
+<p class="leadership-intro">
+Soldier, leader, mentor, and humanitarian,
+guided by service, honour, discipline,
+compassion, and commitment.
+</p>
 
-              <ul>
-                <li>Soldier, leader, mentor, and humanitarian.</li>
+<details class="leadership-details">
 
-                <li>Emphasizes discipline, compassion, and empathy in leadership.</li>
+<summary>Learn More</summary>
 
-                <li>Passionate about supporting people and communities.</li>
+<div class="leadership-bio">
 
-                <li>Encourages courage and resilience during adversity.</li>
+<p>
+Lt Col Divakara Naidu brings a leadership
+philosophy rooted in service, honour, and commitment.
+</p>
 
-                <li>Inspires others through purposeful leadership and service.</li>
-              </ul>
+<ul>
 
-            </div>
+<li>
+Soldier, leader, mentor, and humanitarian.
+</li>
 
-          </details>
+<li>
+Emphasizes discipline, compassion,
+and empathy in leadership.
+</li>
 
-        </div>
+<li>
+Passionate about supporting people and communities.
+</li>
 
-      </article>
+<li>
+Encourages courage and resilience during adversity.
+</li>
 
-    </div>
+<li>
+Inspires others through purposeful leadership and service.
+</li>
 
-  </div>
+</ul>
+
+</div>
+
+</details>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
 
 </section>
 
@@ -967,19 +1117,21 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <section class="leadership-bottom">
 
-  <h2>Compassion. Trust. Care.</h2>
+<h2>Compassion. Trust. Care.</h2>
 
-  <p>
-    Together, our leadership and advisors
-    are committed to strengthening the quality
-    and accessibility of home healthcare.
-  </p>
+<p>
+Together, our leadership and advisors
+are committed to strengthening the quality
+and accessibility of home healthcare.
+</p>
 
-  <a
-    class="leadership-contact-button"
-    href="contact.html">
-    Get in Touch
-  </a>
+<a
+class="leadership-contact-button"
+href="contact.html">
+
+Get in Touch
+
+</a>
 
 </section>
 
@@ -989,31 +1141,36 @@ content="Meet the leadership team and advisors of Elara Healthcare LLP, Bengalur
 
 <footer>
 
-  <div class="wrap">
+<div class="wrap">
 
-    <img
-      src="supportive%20Home%20Care%20Emblem.png"
-      alt="Elara Healthcare LLP Logo"
-      class="footer-logo">
+<img
+src="Supportive%20Home%20Care%20Emblem.png"
+alt="Elara Healthcare LLP Logo"
+class="footer-logo">
 
-    <div>
-      <strong>ELARA HEALTHCARE LLP</strong>
-    </div>
+<div>
 
-    <p>
-      Home healthcare with compassion,
-      dignity and respect.
-    </p>
+<strong>
+ELARA HEALTHCARE LLP
+</strong>
 
-    <p>
-      Indiranagar, Bengaluru, Karnataka, India
-    </p>
+</div>
 
-    <small>
-      © 2026 Elara Healthcare LLP. All rights reserved.
-    </small>
+<p>
+Home healthcare with compassion,
+dignity and respect.
+</p>
 
-  </div>
+<p>
+Indiranagar, Bengaluru,
+Karnataka, India
+</p>
+
+<small>
+© 2026 Elara Healthcare LLP. All rights reserved.
+</small>
+
+</div>
 
 </footer>
 
