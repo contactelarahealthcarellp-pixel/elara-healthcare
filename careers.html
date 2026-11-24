@@ -11,7 +11,10 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="icon" type="image/png" href="supportive%20Home%20C%20Care%20Emblem.png">
+
 <style>
+
 :root {
   --purple:#593b77;
   --teal:#147b78;
@@ -29,6 +32,55 @@ body {
   margin:0;
 }
 
+/* HEADER BRANDING */
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.brand-logo {
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  flex-shrink:0;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+}
+
+.brand-text {
+  display:flex;
+  flex-direction:column;
+  color:#593b77;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:1.3px;
+  white-space:nowrap;
+}
+
+.brand-text small {
+  display:block;
+  color:#147b78;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-top:5px;
+}
+
+.footer-logo {
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  margin-bottom:15px;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+}
+
+/* CAREERS PAGE */
+
 .careers-page {
   background:var(--cream);
   min-height:100vh;
@@ -36,13 +88,18 @@ body {
 
 /* HERO */
 
-.careers-hero {
+.careers-page .careers-hero {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
   text-align:center;
   padding:85px 20px 80px;
   background:linear-gradient(135deg,#f7f1fb,#eaf8f5);
 }
 
-.eyebrow {
+.careers-page .eyebrow {
   color:var(--teal);
   font-size:12px;
   font-weight:700;
@@ -56,6 +113,7 @@ body {
   font-family:Georgia,serif;
   font-size:clamp(36px,5vw,54px);
   margin:0 0 18px;
+  text-align:center;
 }
 
 .careers-hero h2 {
@@ -63,6 +121,7 @@ body {
   font-size:clamp(18px,3vw,23px);
   margin:0 0 22px;
   font-weight:600;
+  text-align:center;
 }
 
 .careers-hero p {
@@ -71,6 +130,7 @@ body {
   line-height:1.9;
   max-width:760px;
   margin:0 auto 28px;
+  text-align:center;
 }
 
 .career-button {
@@ -105,19 +165,19 @@ body {
   padding:75px 22px;
 }
 
-.section-heading {
+.careers-page .section-heading {
   text-align:center;
   margin-bottom:43px;
 }
 
-.section-heading h2 {
+.careers-page .section-heading h2 {
   color:var(--purple);
   font-family:Georgia,serif;
   font-size:clamp(30px,4vw,39px);
   margin:0 0 15px;
 }
 
-.section-heading p {
+.careers-page .section-heading p {
   color:var(--text);
   font-size:15px;
   line-height:1.8;
@@ -224,6 +284,7 @@ body {
   max-width:1050px;
   margin:auto;
   padding:80px 22px;
+  scroll-margin-top:100px;
 }
 
 .apply-card {
@@ -295,22 +356,50 @@ body {
   margin-top:30px;
 }
 
-/* MOBILE */
+/* TABLET */
 
 @media(max-width:850px) {
+
   .benefits-grid,
   .roles-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
+/* RESPONSIVE BRANDING */
+
+@media(max-width:768px) {
+
+  .brand-logo {
+    width:45px;
+    height:45px;
+  }
+
+  .brand-text {
+    font-size:12px;
+    letter-spacing:0.8px;
+  }
+
+  .brand-text small {
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .brand {
+    gap:8px;
+  }
+}
+
+/* MOBILE */
+
 @media(max-width:600px) {
+
   .benefits-grid,
   .roles-grid {
     grid-template-columns:1fr;
   }
 
-  .careers-hero {
+  .careers-page .careers-hero {
     padding:60px 20px;
   }
 
@@ -332,6 +421,7 @@ body {
     align-items:center;
   }
 }
+
 </style>
 </head>
 
@@ -340,24 +430,35 @@ body {
 <!-- HEADER -->
 
 <header>
-<nav class="nav">
 
-<a class="brand" href="index.html">
-  ELARA HEALTHCARE
-  <small>LLP · BENGALURU</small>
-</a>
+  <nav class="nav">
 
-<div class="links">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About Us</a>
-  <a href="leadership.html">Leadership</a>
-  <a class="action" href="request-care.html">Request Care</a>
-  <a class="active" href="careers.html">Careers</a>
-  <a href="contact.html">Contact</a>
-</div>
+    <a class="brand" href="index.html">
 
-</nav>
+      <img
+        src="supportive%20Home%20C%20Care%20Emblem.png"
+        alt="Elara Healthcare LLP Logo"
+        class="brand-logo">
+
+      <span class="brand-text">
+        ELARA HEALTHCARE LLP
+        <small>BENGALURU</small>
+      </span>
+
+    </a>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="leadership.html">Leadership</a>
+      <a class="action" href="request-care.html">Request Care</a>
+      <a class="active" href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+
 </header>
 
 <main class="careers-page">
@@ -396,6 +497,7 @@ body {
 <section class="career-section">
 
   <div class="section-heading">
+
     <h2>Why Join Elara?</h2>
 
     <p>
@@ -403,18 +505,21 @@ body {
       focused on making a meaningful difference
       in the lives of individuals and families.
     </p>
+
   </div>
 
   <div class="benefits-grid">
 
-    <!-- COMPASSION -->
+    <!-- COMPASSIONATE CULTURE -->
 
     <article class="benefit-card">
 
       <div class="benefit-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
         </svg>
+
       </div>
 
       <h3>Compassionate Culture</h3>
@@ -427,15 +532,17 @@ body {
 
     </article>
 
-    <!-- PROFESSIONAL DEVELOPMENT -->
+    <!-- PROFESSIONAL GROWTH -->
 
     <article class="benefit-card">
 
       <div class="benefit-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 17l6-6 4 4 8-8"/>
           <path d="M15 7h6v6"/>
         </svg>
+
       </div>
 
       <h3>Professional Growth</h3>
@@ -448,17 +555,19 @@ body {
 
     </article>
 
-    <!-- TEAMWORK -->
+    <!-- COLLABORATIVE TEAM -->
 
     <article class="benefit-card">
 
       <div class="benefit-icon">
+
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="9" cy="8" r="3"/>
           <path d="M3 20v-2a6 6 0 0 1 12 0v2"/>
           <path d="M17 5a3 3 0 0 1 0 6"/>
           <path d="M18 14a5 5 0 0 1 3 5v1"/>
         </svg>
+
       </div>
 
       <h3>Collaborative Team</h3>
@@ -472,85 +581,119 @@ body {
     </article>
 
   </div>
+
 </section>
 
-<!-- CAREER AREAS -->
+<!-- CAREER OPPORTUNITIES -->
 
 <section class="roles-section">
 
-<div class="roles-inner">
+  <div class="roles-inner">
 
-  <div class="section-heading">
-    <h2>Explore Career Opportunities</h2>
+    <div class="section-heading">
 
-    <p>
-      We welcome enquiries from qualified
-      and dedicated professionals interested
-      in supporting our healthcare services.
-      The areas below represent potential
-      career opportunities, subject to availability.
-    </p>
+      <h2>Explore Career Opportunities</h2>
+
+      <p>
+        We welcome enquiries from qualified
+        and dedicated professionals interested
+        in supporting our healthcare services.
+        The areas below represent potential
+        career opportunities, subject to availability.
+      </p>
+
+    </div>
+
+    <div class="roles-grid">
+
+      <!-- NURSING PROFESSIONALS -->
+
+      <article class="role-card">
+
+        <h3>Nursing Professionals</h3>
+
+        <p>
+          Qualified nursing professionals
+          interested in providing attentive
+          and compassionate care at home.
+        </p>
+
+      </article>
+
+      <!-- HOME CAREGIVERS -->
+
+      <article class="role-card">
+
+        <h3>Home Caregivers</h3>
+
+        <p>
+          Dedicated caregivers supporting
+          daily living activities, comfort,
+          safety, and personal assistance.
+        </p>
+
+      </article>
+
+      <!-- PHYSIOTHERAPISTS -->
+
+      <article class="role-card">
+
+        <h3>Physiotherapists</h3>
+
+        <p>
+          Professionals supporting mobility,
+          physical rehabilitation,
+          and functional recovery.
+        </p>
+
+      </article>
+
+      <!-- ELDER CARE -->
+
+      <article class="role-card">
+
+        <h3>Elder Care Professionals</h3>
+
+        <p>
+          Compassionate individuals interested
+          in supporting the dignity,
+          comfort, and well-being of older adults.
+        </p>
+
+      </article>
+
+      <!-- PATIENT CARE ASSISTANTS -->
+
+      <article class="role-card">
+
+        <h3>Patient Care Assistants</h3>
+
+        <p>
+          Professionals assisting with
+          non-clinical daily care needs
+          under appropriate supervision.
+        </p>
+
+      </article>
+
+      <!-- HEALTHCARE ADMINISTRATION -->
+
+      <article class="role-card">
+
+        <h3>Healthcare Support &amp; Administration</h3>
+
+        <p>
+          Individuals interested in supporting
+          care coordination, administration,
+          and organizational operations.
+        </p>
+
+      </article>
+
+    </div>
+
   </div>
 
-  <div class="roles-grid">
-
-    <article class="role-card">
-      <h3>Nursing Professionals</h3>
-      <p>
-        Qualified nursing professionals
-        interested in providing attentive
-        and compassionate care at home.
-      </p>
-    </article>
-
-    <article class="role-card">
-      <h3>Home Caregivers</h3>
-      <p>
-        Dedicated caregivers supporting
-        daily living activities, comfort,
-        safety, and personal assistance.
-      </p>
-    </article>
-
-    <article class="role-card">
-      <h3>Physiotherapists</h3>
-      <p>
-        Professionals supporting mobility,
-        physical rehabilitation,
-        and functional recovery.
-      </p>
-    </article>
-
-    <article class="role-card">
-      <h3>Elder Care Professionals</h3>
-      <p>
-        Compassionate individuals interested
-        in supporting the dignity,
-        comfort, and well-being of older adults.
-      </p>
-    </article>
-
-    <article class="role-card">
-      <h3>Patient Care Assistants</h3>
-      <p>
-        Professionals assisting with
-        non-clinical daily care needs
-        under appropriate supervision.
-      </p>
-    </article>
-
-    <article class="role-card">
-      <h3>Healthcare Support &amp; Administration</h3>
-      <p>
-        Individuals interested in supporting
-        care coordination, administration,
-        and organizational operations.
-      </p>
-    </article>
-
-  </div>
-
-</div>
 </section>
 
 <!-- JOIN OUR TEAM -->
@@ -580,13 +723,17 @@ body {
       <a
         class="career-button"
         href="mailto:contact.elarahealthcarellp@gmail.com?subject=Career%20Enquiry%20-%20Elara%20Healthcare">
+
         Apply via Email
+
       </a>
 
       <a
         class="career-button teal"
         href="contact.html">
+
         Contact Our Team
+
       </a>
 
     </div>
@@ -594,7 +741,9 @@ body {
     <a
       class="apply-email"
       href="mailto:contact.elarahealthcarellp@gmail.com">
+
       contact.elarahealthcarellp@gmail.com
+
     </a>
 
   </div>
@@ -627,29 +776,44 @@ body {
 <!-- FOOTER -->
 
 <footer>
-<div class="wrap">
 
-  <strong>ELARA HEALTHCARE LLP</strong>
+  <div class="wrap">
 
-  <p>
-    Home healthcare with compassion,
-    dignity and respect.
-  </p>
+    <img
+      src="supportive%20Home%20C%20Care%20Emblem.png"
+      alt="Elara Healthcare LLP Logo"
+      class="footer-logo">
 
-  <p>
-    Indiranagar, Bengaluru,
-    Karnataka, India
-  </p>
+    <div>
+      <strong>ELARA HEALTHCARE LLP</strong>
+    </div>
 
-  <p>
-    <a href="mailto:contact.elarahealthcarellp@gmail.com">
-      contact.elarahealthcarellp@gmail.com
-    </a>
-  </p>
+    <p>
+      Home healthcare with compassion,
+      dignity and respect.
+    </p>
 
-  <small>© 2026 Elara Healthcare LLP</small>
+    <p>
+      Indiranagar, Bengaluru,
+      Karnataka, India
+    </p>
 
-</div>
+    <p>
+
+      <a href="mailto:contact.elarahealthcarellp@gmail.com">
+
+        contact.elarahealthcarellp@gmail.com
+
+      </a>
+
+    </p>
+
+    <small>
+      © 2026 Elara Healthcare LLP. All rights reserved.
+    </small>
+
+  </div>
+
 </footer>
 
 </body>
