@@ -1,38 +1,857 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Request Care | Elara Healthcare LLP</title><link rel="stylesheet" href="style.css"><style>.entry-form{display:grid;gap:14px}.entry-form label{font-size:13px;font-weight:700;color:#593b77;display:grid;gap:5px}.entry-form input,.entry-form select,.entry-form textarea{width:100%;padding:12px;border:1px solid #d8d5dd;border-radius:5px;font:inherit;color:#26343b;background:white}.entry-form textarea{min-height:110px;resize:vertical}.entry-form button{background:#593b77;color:white;border:0;border-radius:5px;padding:14px 20px;font-weight:700;cursor:pointer}.entry-form button:disabled{opacity:.65;cursor:wait}.entry-form .message{min-height:24px;font-size:14px}.entry-form .message.error{color:#a32132}.entry-form .message.success{color:#176a4c}.entry-form .hint{font-size:12px;color:#657176}.entry-form .consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;color:#445}.entry-form .consent input{width:auto;margin-top:5px}</style></head><body><header><nav class="nav"><a class="brand" href="index.html">ELARA HEALTHCARE<small>LLP · BENGALURU</small></a><div class="links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="leadership.html">Leadership</a><a href="request-care.html">Request Care</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div></nav></header><main><section class="page-head"><div class="wrap"><div class="eyebrow">GET STARTED</div><h1>Request home healthcare</h1><p>Tell us about the care you need.</p></div></section><section class="section"><div class="wrap two"><div><h2>Let us understand your needs.</h2><p>Our team will review your request and contact you to discuss suitable home healthcare services.</p><p>You can also <a href="https://wa.me/message/RUPXGM5BZYWVI1">message us on WhatsApp</a>.</p></div><div class="form-panel"><h3>Request Home Care</h3><form class="entry-form" data-elara-form="care_requests"><label>Contact name *<input name="contact_name" autocomplete="name" required maxlength="120"></label><label>Phone number *<input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label><label>Service needed *<select name="service" required><option value="">Choose a service</option><option>Nursing Care at Home</option><option>Doctor Visits at Home</option><option>Elder Care</option><option>Physiotherapy</option><option>Facilitation &amp; Rehabilitation</option><option>Mother &amp; Baby Care</option><option>ICU Home Setup</option><option>Critical Care Nursing at Home</option><option>Medical Equipment Rental</option><option>Palliative Care</option><option>Other</option></select></label><label>Location / area *<input name="location" required maxlength="160" placeholder="e.g. Indiranagar, Bengaluru"></label><label>Preferred date<input name="preferred_date" type="date"></label><label>How can we help?<textarea name="details" maxlength="3000" placeholder="Share a brief description; avoid entering sensitive medical records."></textarea></label><label class="consent"><input type="checkbox" name="consent" required> I agree that Elara Healthcare may contact me about this enquiry.</label><label style="position:absolute;left:-9999px" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">Submit Care Request</button><div role="status" aria-live="polite" class="message"></div><span class="hint">For urgent emergencies, contact local emergency services instead of using this form.</span></form></div></div></section></main><footer><div class="wrap"><strong>ELARA HEALTHCARE LLP</strong><p>Home healthcare with compassion, dignity and respect.</p><p>Indiranagar, Bengaluru, Karnataka, India</p><p><a href="https://wa.me/message/RUPXGM5BZYWVI1" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a> · <a href="mailto:contact.elarahealthcarellp@gmail.com">Email Elara</a></p><small>© 2026 Elara Healthcare LLP</small></div></footer><script>
-(function(){
- const endpoint='https://wkbkxiaedjbjzawnqvpv.supabase.co';
- const publicKey='sb_publishable_qlHAOospC3BFtqPJXeGD8g_KmzR7H8I';
- const form=document.querySelector('[data-elara-form]');
- if(!form)return;
- const message=form.querySelector('[role="status"]');
- const submit=form.querySelector('button[type="submit"]');
- form.addEventListener('submit',async function(event){
-   event.preventDefault();
-   if(!form.reportValidity())return;
-   const data=new FormData(form);
-   const record={};
-   for(const [field,value] of data.entries()){
-     if(field==='consent'||field==='website')continue;
-     record[field]=String(value).trim();
-   }
-   // Honeypot: silently reject automated spam.
-   if(data.get('website'))return;
-   message.className='message';message.textContent='Submitting…';submit.disabled=true;
-   try{
-     const response=await fetch(endpoint+'/rest/v1/'+form.dataset.elaraForm,{
-       method:'POST',
-       headers:{'apikey':publicKey,'Authorization':'Bearer '+publicKey,'Content-Type':'application/json','Prefer':'return=minimal'},
-       body:JSON.stringify(record)
-     });
-     if(!response.ok){
-       const info=await response.text();
-       console.error('Elara form submission failed',response.status,info);
-       throw new Error('The request could not be submitted. Please try again or contact us on WhatsApp.');
-     }
-     form.reset();message.className='message success';message.textContent='Thank you. Your information has been submitted to Elara Healthcare.';
-   }catch(error){
-     message.className='message error';message.textContent=error.message||'Submission failed. Please try again.';
-   }finally{submit.disabled=false;}
- });
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Request Care | Elara Healthcare LLP</title>
+
+<meta name="description"
+content="Request personalized home healthcare services from Elara Healthcare LLP in Bengaluru.">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body {
+  margin: 0;
+}
+
+.care-page {
+  --care-purple: #593b77;
+  --care-teal: #147b78;
+  --care-cream: #faf8f4;
+  --care-text: #514b55;
+  --care-border: #e6dbea;
+
+  width: 100%;
+  background: var(--care-cream);
+  color: var(--care-text);
+}
+
+.care-page *,
+.care-page *::before,
+.care-page *::after {
+  box-sizing: border-box;
+}
+
+/* HERO SECTION */
+
+.care-page .care-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 60px 22px;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #f7f1fb,
+    #eaf8f5
+  );
+}
+
+.care-page .care-eyebrow {
+  color: var(--care-teal);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+}
+
+.care-page .care-hero h1 {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  color: var(--care-purple);
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 auto 18px;
+  padding: 0;
+}
+
+.care-page .care-hero p {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  color: var(--care-text);
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* MAIN LAYOUT */
+
+.care-page .care-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 55px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 55px 25px 75px;
+}
+
+/* LEFT SIDE INFORMATION */
+
+.care-page .care-information {
+  display: block;
+  padding: 15px 0;
+  min-width: 0;
+}
+
+.care-page .care-information h2 {
+  color: var(--care-purple);
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 4vw, 39px);
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.care-page .care-information p {
+  color: var(--care-text);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0 0 20px;
+}
+
+/* INFORMATION CARDS */
+
+.care-page .care-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: white;
+  border: 1px solid var(--care-border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.care-page .care-info-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: #f0eaf6;
+  color: var(--care-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.care-page .care-info-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.care-page .care-info-card h3 {
+  color: var(--care-purple);
+  font-size: 16px;
+  margin: 0 0 7px;
+}
+
+.care-page .care-info-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* WHATSAPP BUTTON */
+
+.care-page .care-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--care-teal);
+  color: white;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.care-page .care-whatsapp:hover {
+  background: var(--care-purple);
+}
+
+/* FORM CARD */
+
+.care-page .care-form-panel {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid var(--care-border);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 35px rgba(69, 43, 89, 0.08);
+}
+
+.care-page .care-form-panel h2 {
+  color: var(--care-purple);
+  font-family: Georgia, serif;
+  font-size: 29px;
+  margin: 0 0 10px;
+}
+
+.care-page .care-form-description {
+  color: #657176;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 25px;
+}
+
+/* FORM FIELDS */
+
+.care-page .entry-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  width: 100%;
+}
+
+.care-page .entry-form label {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--care-purple);
+}
+
+.care-page .entry-form input,
+.care-page .entry-form select,
+.care-page .entry-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #d8d5dd;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #26343b;
+  background: #ffffff;
+}
+
+.care-page .entry-form input:focus,
+.care-page .entry-form select:focus,
+.care-page .entry-form textarea:focus {
+  outline: none;
+  border-color: var(--care-teal);
+  box-shadow: 0 0 0 3px rgba(20, 123, 120, 0.10);
+}
+
+.care-page .entry-form textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.care-page .entry-form input::placeholder,
+.care-page .entry-form textarea::placeholder {
+  color: #929097;
+  font-weight: 400;
+}
+
+/* CONSENT */
+
+.care-page .entry-form .consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  color: var(--care-text);
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.care-page .entry-form .consent input {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin: 3px 0 0;
+  accent-color: var(--care-teal);
+}
+
+/* SUBMIT BUTTON */
+
+.care-page .entry-form button {
+  display: block;
+  width: 100%;
+  background: var(--care-purple);
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.care-page .entry-form button:hover {
+  background: var(--care-teal);
+}
+
+.care-page .entry-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* SUBMISSION MESSAGES */
+
+.care-page .entry-form .message {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.care-page .entry-form .message:empty {
+  display: none;
+}
+
+.care-page .entry-form .message.error {
+  color: #a32132;
+  background: #fff1f2;
+  padding: 13px;
+  border-radius: 8px;
+}
+
+.care-page .entry-form .message.success {
+  color: #176a4c;
+  background: #edf8f1;
+  padding: 13px;
+  border-radius: 8px;
+}
+
+/* EMERGENCY NOTICE */
+
+.care-page .entry-form .hint {
+  display: block;
+  color: #657176;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.care-page .care-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 850px) {
+
+  .care-page .care-content {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    gap: 30px;
+    padding: 40px 22px 55px;
+  }
+
+  .care-page .care-information {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .care-page .care-hero {
+    padding: 45px 18px;
+  }
+
+  .care-page .care-hero h1 {
+    font-size: 34px;
+  }
+
+  .care-page .care-hero p {
+    font-size: 15px;
+  }
+
+  .care-page .care-content {
+    padding: 35px 18px 50px;
+  }
+
+  .care-page .care-form-panel {
+    padding: 25px 20px;
+  }
+
+  .care-page .care-information h2 {
+    font-size: 30px;
+  }
+
+  .care-page .care-form-panel h2 {
+    font-size: 26px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+<nav class="nav">
+
+<a class="brand" href="index.html">
+  ELARA HEALTHCARE
+  <small>LLP · BENGALURU</small>
+</a>
+
+<div class="links">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About Us</a>
+  <a href="leadership.html">Leadership</a>
+  <a class="action active" href="request-care.html">Request Care</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+</nav>
+</header>
+
+<main class="care-page">
+
+<!-- CENTERED HERO -->
+
+<section class="care-hero">
+
+  <div class="care-eyebrow">
+    WE ARE HERE TO HELP
+  </div>
+
+  <h1>Request Home Healthcare</h1>
+
+  <p>
+    Compassionate, personalized healthcare for you
+    and your loved ones, in the comfort of your home.
+  </p>
+
+</section>
+
+<!-- MAIN CONTENT -->
+
+<section class="care-content">
+
+<!-- LEFT SIDE -->
+
+<div class="care-information">
+
+  <div class="care-eyebrow">
+    LET'S GET STARTED
+  </div>
+
+  <h2>Let us understand your needs.</h2>
+
+  <p>
+    Every individual deserves care that respects
+    their comfort, dignity, and personal needs.
+  </p>
+
+  <p>
+    Share your requirements with our team.
+    We will review your enquiry and contact you
+    to discuss suitable home healthcare services.
+  </p>
+
+  <!-- PERSONALIZED CARE -->
+
+  <div class="care-info-card">
+
+    <div class="care-info-icon">
+
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+      </svg>
+
+    </div>
+
+    <div>
+      <h3>Personalized Care</h3>
+      <p>
+        Healthcare support focused on individual
+        needs, comfort, and well-being.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- HOME HEALTHCARE -->
+
+  <div class="care-info-card">
+
+    <div class="care-info-icon">
+
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 10l9-7 9 7"/>
+        <path d="M5 9v12h14V9"/>
+        <path d="M12 11v6M9 14h6"/>
+      </svg>
+
+    </div>
+
+    <div>
+      <h3>Care at Your Home</h3>
+      <p>
+        Professional healthcare support
+        in familiar and comfortable surroundings.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- CARE COORDINATION -->
+
+  <div class="care-info-card">
+
+    <div class="care-info-icon">
+
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+      </svg>
+
+    </div>
+
+    <div>
+      <h3>Dedicated Support</h3>
+      <p>
+        Our team will help you explore
+        suitable care options for your loved ones.
+      </p>
+    </div>
+
+  </div>
+
+  <a class="care-whatsapp"
+     href="https://wa.me/message/RUPXGM5BZYWVI1"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    Chat with Us on WhatsApp
+
+  </a>
+
+</div>
+
+<!-- RIGHT SIDE FORM -->
+
+<div class="care-form-panel">
+
+  <h2>Request Home Care</h2>
+
+  <p class="care-form-description">
+    Please complete the form below.
+    Fields marked with * are required.
+  </p>
+
+  <form class="entry-form"
+        data-elara-form="care_requests">
+
+    <label>
+      Contact Name *
+
+      <input
+        name="contact_name"
+        autocomplete="name"
+        placeholder="Enter your full name"
+        required
+        maxlength="120">
+    </label>
+
+    <label>
+      Phone Number *
+
+      <input
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        placeholder="Enter your contact number"
+        required
+        maxlength="30">
+    </label>
+
+    <label>
+      Service Needed *
+
+      <select name="service" required>
+
+        <option value="">Choose a service</option>
+
+        <option>Nursing Care at Home</option>
+        <option>Doctor Visits at Home</option>
+        <option>Elder Care</option>
+        <option>Physiotherapy</option>
+        <option>Facilitation &amp; Rehabilitation</option>
+        <option>Mother &amp; Baby Care</option>
+        <option>ICU Home Setup</option>
+        <option>Critical Care Nursing at Home</option>
+        <option>Medical Equipment Rental</option>
+        <option>Palliative Care</option>
+        <option>Compassionate Care</option>
+        <option>Other</option>
+
+      </select>
+    </label>
+
+    <label>
+      Location / Area *
+
+      <input
+        name="location"
+        required
+        maxlength="160"
+        placeholder="e.g. Indiranagar, Bengaluru">
+    </label>
+
+    <label>
+      Preferred Date
+
+      <input
+        name="preferred_date"
+        type="date">
+    </label>
+
+    <label>
+      How Can We Help?
+
+      <textarea
+        name="details"
+        maxlength="3000"
+        placeholder="Briefly describe your care requirements. Please avoid sharing sensitive medical records."></textarea>
+    </label>
+
+    <label class="consent">
+
+      <input
+        type="checkbox"
+        name="consent"
+        required>
+
+      <span>
+        I agree that Elara Healthcare may contact me
+        regarding this enquiry.
+      </span>
+
+    </label>
+
+    <!-- SPAM PROTECTION -->
+
+    <div class="care-honeypot" aria-hidden="true">
+
+      <label>
+        Website
+
+        <input
+          name="website"
+          tabindex="-1"
+          autocomplete="off">
+      </label>
+
+    </div>
+
+    <button type="submit">
+      Submit Care Request
+    </button>
+
+    <div
+      role="status"
+      aria-live="polite"
+      class="message">
+    </div>
+
+    <span class="hint">
+      For urgent medical emergencies, please contact
+      local emergency services instead of using this form.
+    </span>
+
+  </form>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="wrap">
+
+  <strong>ELARA HEALTHCARE LLP</strong>
+
+  <p>
+    Home healthcare with compassion,
+    dignity and respect.
+  </p>
+
+  <p>
+    Indiranagar, Bengaluru,
+    Karnataka, India
+  </p>
+
+  <p>
+
+    <a href="https://wa.me/message/RUPXGM5BZYWVI1"
+       target="_blank"
+       rel="noopener noreferrer">
+      Chat on WhatsApp
+    </a>
+
+    ·
+
+    <a href="mailto:contact.elarahealthcarellp@gmail.com">
+      Email Elara
+    </a>
+
+  </p>
+
+  <small>© 2026 Elara Healthcare LLP</small>
+
+</div>
+
+</footer>
+
+<!-- SUPABASE FORM CONNECTION -->
+
+<script>
+
+(function () {
+
+  const endpoint =
+    'https://wkbkxiaedjbjzawnqvpv.supabase.co';
+
+  const publicKey =
+    'sb_publishable_qlHAOospC3BFtqPJXeGD8g_KmzR7H8I';
+
+  const form =
+    document.querySelector('[data-elara-form]');
+
+  if (!form) return;
+
+  const message =
+    form.querySelector('[role="status"]');
+
+  const submit =
+    form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async function (event) {
+
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+
+    const record = {};
+
+    // Reject automated spam.
+
+    if (data.get('website')) return;
+
+    for (const [field, value] of data.entries()) {
+
+      if (field === 'consent' || field === 'website') {
+        continue;
+      }
+
+      record[field] = String(value).trim();
+    }
+
+    // Avoid submitting an empty date value.
+
+    if (!record.preferred_date) {
+      delete record.preferred_date;
+    }
+
+    message.className = 'message';
+    message.textContent = 'Submitting your request…';
+
+    submit.disabled = true;
+    submit.textContent = 'Submitting…';
+
+    try {
+
+      const response = await fetch(
+        endpoint + '/rest/v1/' + form.dataset.elaraForm,
+        {
+          method: 'POST',
+
+          headers: {
+            'apikey': publicKey,
+            'Authorization': 'Bearer ' + publicKey,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+
+          body: JSON.stringify(record)
+        }
+      );
+
+      if (!response.ok) {
+
+        console.error(
+          'Elara form submission failed',
+          response.status
+        );
+
+        throw new Error(
+          'Your request could not be submitted. Please try again or contact us on WhatsApp.'
+        );
+      }
+
+      form.reset();
+
+      message.className = 'message success';
+
+      message.textContent =
+        'Thank you for contacting Elara Healthcare. Your care request has been submitted successfully. Our team will contact you.';
+
+    } catch (error) {
+
+      message.className = 'message error';
+
+      message.textContent =
+        error.message ||
+        'Submission failed. Please try again.';
+
+    } finally {
+
+      submit.disabled = false;
+      submit.textContent = 'Submit Care Request';
+
+    }
+
+  });
+
 })();
-</script></body></html>
+
+</script>
+
+</body>
+</html>
