@@ -1,556 +1,303 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home | Elara Healthcare LLP</title>
+    <title>Home | Elara Healthcare LLP</title>
 
-  <meta name="description"
-        content="Elara Healthcare LLP provides compassionate home healthcare services in Bengaluru, including nursing care, elder care, physiotherapy, rehabilitation and doctor home visits.">
+    <meta name="description" content="Elara Healthcare LLP provides compassionate and personalized home healthcare services in Bengaluru.">
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 
-  <style>
-    :root {
-      --purple: #593b77;
-      --teal: #147b78;
-      --cream: #faf8f4;
-      --lavender: #f2edf6;
-      --text: #514b55;
-    }
+    <style>
+        /* Header Branding */
 
-    * {
-      box-sizing: border-box;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
 
-    body {
-      margin: 0;
-      background: var(--cream);
-    }
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
 
-    /* HERO */
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #593b77;
+            white-space: nowrap;
+        }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 45px;
-      padding: 75px max(5%, 25px);
-      background: linear-gradient(135deg, #faf8f4, #f2edf6);
-    }
+        .brand-text small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #147b78;
+            margin-top: 5px;
+        }
 
-    .hero-copy {
-      max-width: 600px;
-    }
+        /* Footer Branding */
 
-    .hero-copy .eyebrow {
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
 
-    .hero-copy h1 {
-      font-family: Georgia, serif;
-      color: var(--purple);
-      font-size: clamp(40px, 5vw, 65px);
-      line-height: 1.15;
-      margin: 0 0 24px;
-    }
+        .footer-logo {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
 
-    .hero-copy p {
-      color: var(--text);
-      font-size: 17px;
-      line-height: 1.9;
-      margin-bottom: 30px;
-    }
+        /* Mobile Layout */
 
-    .hero-image {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 22px;
-      box-shadow: 0 15px 40px rgba(69, 43, 89, 0.12);
-    }
+        @media (max-width: 768px) {
 
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: 460px;
-      object-fit: cover;
-      object-position: center;
-    }
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+            }
 
-    /* BUTTONS */
+            .brand-text {
+                font-size: 12px;
+                letter-spacing: 0.8px;
+            }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+            .brand-text small {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
 
-    .button {
-      display: inline-block;
-      background: var(--purple);
-      color: white;
-      padding: 14px 27px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: background 0.2s ease;
-    }
+            .brand {
+                gap: 8px;
+            }
 
-    .button:hover {
-      background: var(--teal);
-    }
-
-    .button.outline {
-      background: transparent;
-      border: 2px solid var(--purple);
-      color: var(--purple);
-    }
-
-    .button.outline:hover {
-      background: var(--purple);
-      color: white;
-    }
-
-    .button.alt {
-      background: var(--teal);
-    }
-
-    .button.alt:hover {
-      background: var(--purple);
-    }
-
-    /* VALUES */
-
-    .values {
-      padding: 65px 20px;
-      background: white;
-    }
-
-    .values .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .values .tile {
-      background: #faf8fc;
-      border: 1px solid #e8dfec;
-      border-radius: 18px;
-      padding: 32px 26px;
-      text-align: center;
-    }
-
-    .values .tile h3 {
-      font-family: Georgia, serif;
-      color: var(--purple);
-      font-size: 23px;
-      margin: 0 0 14px;
-    }
-
-    .values .tile p {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    /* WELCOME */
-
-    .welcome-section {
-      padding: 85px 22px;
-      background: var(--cream);
-    }
-
-    .welcome-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .welcome-section .eyebrow {
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    .welcome-section h2 {
-      font-family: Georgia, serif;
-      color: var(--purple);
-      font-size: clamp(32px, 4vw, 45px);
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .welcome-text p {
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.9;
-      margin: 0 0 20px;
-    }
-
-    /* CALL TO ACTION */
-
-    .home-cta {
-      text-align: center;
-      padding: 80px 22px;
-      background: linear-gradient(135deg, #f2edf6, #e9f6f3);
-    }
-
-    .home-cta .eyebrow {
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 17px;
-    }
-
-    .home-cta h2 {
-      font-family: Georgia, serif;
-      color: var(--purple);
-      font-size: clamp(30px, 4vw, 43px);
-      max-width: 760px;
-      margin: 0 auto 20px;
-    }
-
-    .home-cta p {
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.8;
-      max-width: 680px;
-      margin: 0 auto 28px;
-    }
-
-    /* FOOTER */
-
-    .home-footer a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-
-    .home-footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 55px 25px;
-      }
-
-      .hero-image img {
-        height: 380px;
-      }
-
-      .values .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .welcome-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 45px 20px;
-        gap: 30px;
-      }
-
-      .hero-copy h1 {
-        font-size: 40px;
-      }
-
-      .hero-image img {
-        height: 300px;
-      }
-
-      .buttons {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .values {
-        padding: 45px 18px;
-      }
-
-      .welcome-section {
-        padding: 55px 20px;
-      }
-
-      .home-cta {
-        padding: 60px 20px;
-      }
-    }
-  </style>
+            .footer-logo {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+    <!-- HEADER -->
 
-  <header>
-    <nav class="nav">
+    <header>
+        <nav class="nav">
 
-      <a class="brand" href="index.html">
-        ELARA HEALTHCARE
-        <small>LLP · BENGALURU</small>
-      </a>
+            <a class="brand" href="index.html">
 
-      <div class="links">
+                <img
+                    src="logo.png"
+                    alt="Elara Healthcare LLP Logo"
+                    class="brand-logo"
+                >
 
-        <a class="active" href="index.html">
-          Home
-        </a>
+                <span class="brand-text">
+                    ELARA HEALTHCARE LLP
+                    <small>BENGALURU</small>
+                </span>
 
-        <a href="services.html">
-          Services
-        </a>
+            </a>
 
-        <a href="about.html">
-          About Us
-        </a>
+            <div class="links">
+                <a class="active" href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="leadership.html">Leadership</a>
+                <a class="action" href="request-care.html">Request Care</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
 
-        <a href="leadership.html">
-          Leadership
-        </a>
+        </nav>
+    </header>
 
-        <a class="action" href="request-care.html">
-          Request Care
-        </a>
+    <main>
 
-        <a href="careers.html">
-          Careers
-        </a>
+        <!-- HERO SECTION -->
 
-        <a href="contact.html">
-          Contact
-        </a>
+        <section class="hero">
 
-      </div>
+            <div class="hero-copy">
 
-    </nav>
-  </header>
+                <div class="eyebrow">
+                    ELARA HEALTHCARE LLP · HOME CARE
+                </div>
 
-  <main>
+                <h1>Care that feels like family.</h1>
 
-    <!-- HERO SECTION -->
+                <p>
+                    Personalized home healthcare services
+                    for you and your loved ones, delivered
+                    with kindness, dignity and respect.
+                </p>
 
-    <section class="hero">
+                <div class="buttons">
 
-      <div class="hero-copy">
+                    <a class="button" href="request-care.html">
+                        Request Care
+                    </a>
 
-        <div class="eyebrow">
-          ELARA HEALTHCARE LLP · HOME CARE
+                    <a class="button outline" href="services.html">
+                        Explore Our Services
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="Elara_Nurse_Photo_Sharpened.jpg"
+                    alt="Compassionate nursing care for an elderly patient at home"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- OUR VALUES -->
+
+        <section class="values">
+
+            <div class="wrap grid">
+
+                <div class="tile">
+                    <h3>Compassionate Approach</h3>
+                    <p>Care grounded in kindness and respect.</p>
+                </div>
+
+                <div class="tile">
+                    <h3>Personalized Support</h3>
+                    <p>Focused on individual needs and comfort.</p>
+                </div>
+
+                <div class="tile">
+                    <h3>Care at Home</h3>
+                    <p>Support in familiar surroundings.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- WELCOME SECTION -->
+
+        <section class="section">
+
+            <div class="wrap split">
+
+                <div>
+
+                    <div class="eyebrow">
+                        WELCOME TO ELARA
+                    </div>
+
+                    <h2>Care that feels personal.</h2>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        Elara Healthcare LLP is a Bengaluru-based
+                        home healthcare organization supporting
+                        individuals and families with thoughtful,
+                        dependable care.
+                    </p>
+
+                    <p>
+                        From nursing care and elder support to
+                        doctor visits, rehabilitation and medical
+                        equipment assistance, our services are
+                        designed around the needs of each person.
+                    </p>
+
+                    <a class="button alt" href="about.html">
+                        About Elara
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CALL TO ACTION -->
+
+        <section class="cta">
+
+            <div class="eyebrow">
+                HOW CAN WE HELP?
+            </div>
+
+            <h2>
+                Every care journey begins with a conversation.
+            </h2>
+
+            <p>
+                Share your needs with our team and learn about
+                the home healthcare services available.
+            </p>
+
+            <a class="button" href="request-care.html">
+                Request Care
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="wrap">
+
+            <div class="footer-brand">
+
+                <img
+                    src="logo.png"
+                    alt="Elara Healthcare LLP"
+                    class="footer-logo"
+                >
+
+                <strong>ELARA HEALTHCARE LLP</strong>
+
+            </div>
+
+            <p>
+                Home healthcare with compassion, dignity and respect.
+            </p>
+
+            <p>
+                Indiranagar, Bengaluru, Karnataka, India
+            </p>
+
+            <small>
+                © 2026 Elara Healthcare LLP. All rights reserved.
+            </small>
+
         </div>
 
-        <h1>
-          Care that feels like family.
-        </h1>
-
-        <p>
-          Personalized home healthcare services
-          for you and your loved ones,
-          delivered with kindness,
-          dignity and respect.
-        </p>
-
-        <div class="buttons">
-
-          <a class="button" href="request-care.html">
-            Request Care
-          </a>
-
-          <a class="button outline" href="services.html">
-            Explore Our Services
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="hero-image">
-
-        <img
-          src="Elara_Nurse_Photo_Sharpened.jpg"
-          alt="Healthcare professional providing compassionate home care"
-          loading="eager">
-
-      </div>
-
-    </section>
-
-    <!-- OUR VALUES -->
-
-    <section class="values">
-
-      <div class="wrap grid">
-
-        <div class="tile">
-
-          <h3>Compassionate Approach</h3>
-
-          <p>
-            Care grounded in kindness,
-            empathy and respect.
-          </p>
-
-        </div>
-
-        <div class="tile">
-
-          <h3>Personalized Support</h3>
-
-          <p>
-            Healthcare support focused on
-            individual needs and comfort.
-          </p>
-
-        </div>
-
-        <div class="tile">
-
-          <h3>Care at Home</h3>
-
-          <p>
-            Professional support delivered
-            in familiar surroundings.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- WELCOME SECTION -->
-
-    <section class="welcome-section">
-
-      <div class="wrap welcome-grid">
-
-        <div>
-
-          <div class="eyebrow">
-            WELCOME TO ELARA
-          </div>
-
-          <h2>
-            Care that feels personal.
-          </h2>
-
-        </div>
-
-        <div class="welcome-text">
-
-          <p>
-            <strong>Elara Healthcare LLP</strong>
-            is a Bengaluru-based home healthcare
-            organization supporting individuals
-            and families with thoughtful,
-            dependable care.
-          </p>
-
-          <p>
-            From nursing care and elder support
-            to doctor visits, rehabilitation
-            and medical equipment assistance,
-            our services are designed around
-            the needs of each person.
-          </p>
-
-          <a class="button alt" href="about.html">
-            About Elara
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- REQUEST CARE -->
-
-    <section class="home-cta">
-
-      <div class="eyebrow">
-        HOW CAN WE HELP?
-      </div>
-
-      <h2>
-        Every care journey begins
-        with a conversation.
-      </h2>
-
-      <p>
-        Share your needs with our team
-        and learn about the home healthcare
-        services available.
-      </p>
-
-      <a class="button" href="request-care.html">
-        Request Care
-      </a>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer class="home-footer">
-
-    <div class="wrap">
-
-      <strong>
-        ELARA HEALTHCARE LLP
-      </strong>
-
-      <p>
-        Home healthcare with compassion,
-        dignity and respect.
-      </p>
-
-      <p>
-        Indiranagar, Bengaluru,
-        Karnataka, India
-      </p>
-
-      <p>
-        Phone:
-        <a href="tel:+918147461116">
-          +91 8147461116
-        </a>
-      </p>
-
-      <p>
-        Email:
-        <a href="mailto:contact.elarahealthcarellp@gmail.com">
-          contact.elarahealthcarellp@gmail.com
-        </a>
-      </p>
-
-      <small>
-        © 2026 Elara Healthcare LLP
-      </small>
-
-    </div>
-
-  </footer>
+    </footer>
 
 </body>
 </html>
