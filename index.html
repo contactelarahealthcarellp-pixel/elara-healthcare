@@ -3,72 +3,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Home | Elara Healthcare LLP</title>
 
-    <meta name="description" content="Elara Healthcare LLP offers compassionate and personalized home healthcare services in Bengaluru.">
+    <meta name="description" content="Elara Healthcare LLP offers compassionate home healthcare services in Bengaluru.">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Logo.png">
+
+    <link rel="icon" type="image/png" href="Supportive%20Home%20Care%20Emblem.png">
 
     <style>
-        .brand {
+        .nav .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
-        .brand-logo {
-            width: 60px;
-            height: 60px;
+        .nav .brand-logo {
+            width: 68px;
+            height: 68px;
             object-fit: contain;
-            flex-shrink: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0;
         }
 
         .brand-text {
             display: flex;
             flex-direction: column;
-            color: #593b77;
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 1.3px;
+            justify-content: center;
+        }
+
+        .brand-name {
+            font-size: 17px;
+            font-weight: 800;
+            color: #68208c;
+            letter-spacing: 0.4px;
             white-space: nowrap;
+            line-height: 1.3;
         }
 
-        .brand-text small {
-            display: block;
-            color: #147b78;
-            font-size: 10px;
-            letter-spacing: 3px;
-            margin-top: 5px;
-        }
-
-        .footer-logo {
-            width: 75px;
-            height: 75px;
-            object-fit: contain;
-            margin-bottom: 15px;
+        .brand-location {
+            font-size: 11px;
+            font-weight: 600;
+            color: #079f9f;
+            letter-spacing: 2px;
+            margin-top: 4px;
         }
 
         @media (max-width: 768px) {
-            .brand-logo {
-                width: 45px;
-                height: 45px;
+            .nav .brand-logo {
+                width: 52px;
+                height: 52px;
             }
 
-            .brand-text {
-                font-size: 12px;
-                letter-spacing: 0.8px;
+            .brand-name {
+                font-size: 14px;
             }
 
-            .brand-text small {
-                font-size: 9px;
-                letter-spacing: 2px;
+            .brand-location {
+                font-size: 10px;
             }
 
-            .brand {
+            .nav .brand {
                 gap: 8px;
             }
         }
@@ -77,185 +79,194 @@
 
 <body>
 
-    <header>
-        <nav class="nav">
+<header>
+    <nav class="nav">
 
-            <a class="brand" href="index.html">
-                <img src="Logo.png"
-                     alt="Elara Healthcare LLP Logo"
-                     class="brand-logo">
+        <a class="brand" href="index.html">
 
-                <span class="brand-text">
+            <img
+                class="brand-logo"
+                src="Supportive%20Home%20Care%20Emblem.png"
+                alt="Elara Healthcare LLP Logo"
+            >
+
+            <div class="brand-text">
+                <span class="brand-name">
                     ELARA HEALTHCARE LLP
-                    <small>BENGALURU</small>
                 </span>
-            </a>
 
-            <div class="links">
-                <a class="active" href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="about.html">About Us</a>
-                <a href="leadership.html">Leadership</a>
-                <a class="action" href="request-care.html">Request Care</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
+                <span class="brand-location">
+                    BENGALURU
+                </span>
             </div>
 
-        </nav>
-    </header>
+        </a>
 
-    <main>
+        <div class="links">
+            <a class="active" href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="leadership.html">Leadership</a>
+            <a class="action" href="request-care.html">Request Care</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
-        <section class="hero">
+    </nav>
+</header>
 
-            <div class="hero-copy">
+<main>
 
-                <div class="eyebrow">
-                    ELARA HEALTHCARE LLP · HOME CARE
-                </div>
+    <section class="hero">
 
-                <h1>Care that feels like family.</h1>
-
-                <p>
-                    Personalized home healthcare services for
-                    you and your loved ones, delivered with
-                    kindness, dignity and respect.
-                </p>
-
-                <div class="buttons">
-                    <a class="button" href="request-care.html">
-                        Request Care
-                    </a>
-
-                    <a class="button outline" href="services.html">
-                        Explore Our Services
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="hero-image">
-                <img
-                    src="Elara_Nurse_Photo_Sharpened.jpg"
-                    alt="Healthcare professional gently holding an elderly patient's hand">
-            </div>
-
-        </section>
-
-        <section class="values">
-
-            <div class="wrap grid">
-
-                <div class="tile">
-                    <h3>Compassionate Approach</h3>
-                    <p>Care grounded in kindness and respect.</p>
-                </div>
-
-                <div class="tile">
-                    <h3>Personalized Support</h3>
-                    <p>Focused on individual needs and comfort.</p>
-                </div>
-
-                <div class="tile">
-                    <h3>Care at Home</h3>
-                    <p>Support in familiar surroundings.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="section">
-
-            <div class="wrap split">
-
-                <div>
-
-                    <div class="eyebrow">
-                        WELCOME TO ELARA
-                    </div>
-
-                    <h2>Care that feels personal.</h2>
-
-                </div>
-
-                <div>
-
-                    <p>
-                        Elara Healthcare LLP is a Bengaluru-based
-                        home healthcare organization supporting
-                        individuals and families with thoughtful,
-                        dependable care.
-                    </p>
-
-                    <p>
-                        From nursing care and elder support to
-                        doctor visits, rehabilitation and medical
-                        equipment assistance, our services are
-                        designed around the needs of each person.
-                    </p>
-
-                    <a class="button alt" href="about.html">
-                        About Elara
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="cta">
+        <div class="hero-copy">
 
             <div class="eyebrow">
-                HOW CAN WE HELP?
+                ELARA HEALTHCARE LLP · HOME CARE
             </div>
 
-            <h2>
-                Every care journey begins with a conversation.
-            </h2>
+            <h1>
+                Compassionate care, in the comfort of your home.
+            </h1>
 
             <p>
-                Share your needs with our team and learn about
-                the home healthcare services available.
-            </p>
-
-            <a class="button" href="request-care.html">
-                Request Care
-            </a>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="wrap">
-
-            <img src="Logo.png"
-                 alt="Elara Healthcare LLP"
-                 class="footer-logo">
-
-            <div>
-                <strong>ELARA HEALTHCARE LLP</strong>
-            </div>
-
-            <p>
-                Home healthcare with compassion,
+                Personalized home healthcare services for you
+                and your loved ones, delivered with kindness,
                 dignity and respect.
             </p>
 
-            <p>
-                Indiranagar, Bengaluru, Karnataka, India
-            </p>
+            <div class="buttons">
 
-            <small>
-                © 2026 Elara Healthcare LLP. All rights reserved.
-            </small>
+                <a class="button" href="request-care.html">
+                    Request Care
+                </a>
+
+                <a class="button outline" href="services.html">
+                    Explore Our Services
+                </a>
+
+            </div>
 
         </div>
 
-    </footer>
+        <div class="hero-image">
+
+            <img
+                src="Elara_Nurse_Photo_Sharpened.jpg"
+                alt="Compassionate home healthcare by Elara Healthcare LLP"
+            >
+
+        </div>
+
+    </section>
+
+    <section class="values">
+
+        <div class="wrap grid">
+
+            <div class="tile">
+                <h3>Compassionate Approach</h3>
+                <p>Care grounded in kindness and respect.</p>
+            </div>
+
+            <div class="tile">
+                <h3>Personalized Support</h3>
+                <p>Focused on individual needs and comfort.</p>
+            </div>
+
+            <div class="tile">
+                <h3>Care at Home</h3>
+                <p>Support in familiar surroundings.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <div class="wrap split">
+
+            <div>
+
+                <div class="eyebrow">
+                    WELCOME TO ELARA
+                </div>
+
+                <h2>Care that feels personal.</h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    Elara Healthcare LLP is a Bengaluru-based
+                    home healthcare organization supporting
+                    individuals and families with thoughtful,
+                    dependable care.
+                </p>
+
+                <p>
+                    From nursing care and elder support to
+                    doctor visits, rehabilitation and medical
+                    equipment assistance, our services are
+                    designed around the needs of each person.
+                </p>
+
+                <a class="button alt" href="about.html">
+                    About Elara
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta">
+
+        <div class="eyebrow">
+            HOW CAN WE HELP?
+        </div>
+
+        <h2>
+            Every care journey begins with a conversation.
+        </h2>
+
+        <p>
+            Share your needs with our team and learn about
+            the home healthcare services available.
+        </p>
+
+        <a class="button" href="request-care.html">
+            Request Care
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="wrap">
+
+        <strong>ELARA HEALTHCARE LLP</strong>
+
+        <p>
+            Home healthcare with compassion, dignity and respect.
+        </p>
+
+        <p>
+            Indiranagar, Bengaluru, Karnataka, India
+        </p>
+
+        <small>
+            &copy; 2026 Elara Healthcare LLP
+        </small>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
